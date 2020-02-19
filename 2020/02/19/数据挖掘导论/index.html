@@ -16,11 +16,11 @@
     <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
     <title>
         
-          Felix Zhang
+          数据挖掘导论课堂笔记 - Felix Zhang
         
     </title>
 
-    <link rel="canonical" href="https://dusign.net/tags/计划/">
+    <link rel="canonical" href="https://dusign.net/2020/02/19/数据挖掘导论/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -87,8 +87,8 @@
     header.intro-header{
         
             
-                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/undefined')
-                /*page*/
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('')
+                /*post*/
             
         
     }
@@ -106,10 +106,33 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 
-                    <div class="site-heading">
-                        <h1>Felix Zhang</h1>
-                        <!--<hr class="small">-->
-                        <span id="subdusi" class="subheading">Fighting for the great dreams!!!</span>
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#LAMDA选修课" title="LAMDA选修课">LAMDA选修课</a>
+                            
+                        </div>
+                        <h1>数据挖掘导论课堂笔记</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by Felix Zhang on
+                            2020-02-19
+                        </span>
+
+                        
+                            <div class="blank_box"></div>
+                            <span class="meta">
+                                Words <span class="post-count">247</span> and
+                                Reading Time <span class="post-count">1</span> Minutes
+                            </span>
+                            <div class="blank_box"></div>
+                            <!-- 不蒜子统计 start -->
+                            <span class="meta">
+                                Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+                            </span>
+                            <!-- 不蒜子统计 end -->
+                        
+
                     </div>
                 
 
@@ -228,285 +251,174 @@
 
 
     <!-- Main Content -->
-    <!-- Main Content -->
-<div class="container">
-    <div class="row">
-        
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
-    <!-- Post Container -->
+            <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-                
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <!-- 归档列表 -->
-            
-            
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
 
-             <!-- 归档列表 -->
+                <h1 id="PART-I-INTRODUCTION"><a href="#PART-I-INTRODUCTION" class="headerlink" title="PART I INTRODUCTION"></a>PART I INTRODUCTION</h1><p>第四范式：基于数据认知，世界中每一个对象都对应于数据；</p>
+<h2 id="2月19日"><a href="#2月19日" class="headerlink" title="2月19日"></a>2月19日</h2><p>Advances in technology：Hardware, software, internet;</p>
+<p>Big data have big values;</p>
+<h3 id="Why-Data-Mining"><a href="#Why-Data-Mining" class="headerlink" title="Why Data Mining?"></a>Why Data Mining?</h3><p>Knowledge, hidden relationships, underlying reality;</p>
+<h5 id="Example-I-Mining-supermarket-transactions"><a href="#Example-I-Mining-supermarket-transactions" class="headerlink" title="Example I Mining supermarket transactions"></a>Example I Mining supermarket transactions</h5><h5 id="Example-II-Mining-the-valuable-customers"><a href="#Example-II-Mining-the-valuable-customers" class="headerlink" title="Example II Mining the valuable customers"></a>Example II Mining the valuable customers</h5><h5 id="Example-III-Mining-network-intrusion-patterns"><a href="#Example-III-Mining-network-intrusion-patterns" class="headerlink" title="Example III Mining network intrusion patterns"></a>Example III Mining network intrusion patterns</h5><h5 id="Example-IV-Mining-gene-data"><a href="#Example-IV-Mining-gene-data" class="headerlink" title="Example IV Mining gene data"></a>Example IV Mining gene data</h5><h5 id="Example-V-Mining-medical-data"><a href="#Example-V-Mining-medical-data" class="headerlink" title="Example V Mining medical data"></a>Example V Mining medical data</h5><p>computer-aided diagnosis;</p>
+<h5 id="Example-VI-Mining-the-web"><a href="#Example-VI-Mining-the-web" class="headerlink" title="Example VI Mining the web"></a>Example VI Mining the web</h5><p>web structure, web content, web usage, web logs</p>
+<p>interesting patterns, behavior identification</p>
+<h5 id="Example-VII-Mining-financial-data"><a href="#Example-VII-Mining-financial-data" class="headerlink" title="Example VII Mining financial data"></a>Example VII Mining financial data</h5><p>fraud detection</p>
+<p>stock trends discovery </p>
+<h5 id="Example-VIII-Mining-software-data"><a href="#Example-VIII-Mining-software-data" class="headerlink" title="Example VIII Mining software data"></a>Example VIII Mining software data</h5><p>improve the software quality, productivity and user experience</p>
+<p>automated debugging</p>
+<h5 id="Example-IX-Mining-usage-data"><a href="#Example-IX-Mining-usage-data" class="headerlink" title="Example IX Mining usage data"></a>Example IX Mining usage data</h5><h5 id="Example-X-Mining-data-from-sensors"><a href="#Example-X-Mining-data-from-sensors" class="headerlink" title="Example X Mining data from sensors"></a>Example X Mining data from sensors</h5><p>技术要自主可控；</p>
+<h5 id="Example-XI-Mining-data-of-arts"><a href="#Example-XI-Mining-data-of-arts" class="headerlink" title="Example XI Mining data of arts"></a>Example XI Mining data of arts</h5><h5 id="Example-XII-Audio-Generation"><a href="#Example-XII-Audio-Generation" class="headerlink" title="Example XII Audio Generation"></a>Example XII Audio Generation</h5><h5 id="Example-XIII-Image-Video-Editing"><a href="#Example-XIII-Image-Video-Editing" class="headerlink" title="Example XIII Image/Video Editing"></a>Example XIII Image/Video Editing</h5><p>more and more applications</p>
+<p>对于不同的数据，性质不同，分析的技术不同；</p>
+<p>Data mining is non-trivial process of identifying valid, novel, potentially useful, and ultimately understandable.</p>
+<p>core: machine learning</p>
+<h3 id="KDD-Knowledge-Discoverty-in-Data"><a href="#KDD-Knowledge-Discoverty-in-Data" class="headerlink" title="KDD: Knowledge Discoverty in Data"></a>KDD: Knowledge Discoverty in Data</h3><h3 id="What-kind-of-data-can-be-mined"><a href="#What-kind-of-data-can-be-mined" class="headerlink" title="What kind of data can be mined?"></a>What kind of data can be mined?</h3><p>(1) “Flat” data: table or data matrix</p>
+<p><em>Attribute varible fields features</em></p>
+<p>(2) Data warehouse: statistic option, data language (make decisions)</p>
+<p>(3) Text data</p>
+<p>(4) Multimedia data: image, audio, video</p>
+<p>(5) Web date</p>
+<p>(6) Social network data</p>
+<p>(7) Temporal and spatial data</p>
+<h3 id="How-to-categorize-data-mining-tasks"><a href="#How-to-categorize-data-mining-tasks" class="headerlink" title="How to categorize data mining tasks?"></a>How to categorize data mining tasks?</h3><p>(1) Descriptive mining tasks.</p>
+<p>(2) Predictive mining tasks.</p>
 
-            
-            <div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2020">
-                    <span class="tag-text">2020</span>
-                </span>
-                <ul>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li >
-                    02-19
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/2020/02/19/数据挖掘导论/" style="color: #0085a1">
-                        <span>
-                            数据挖掘导论课堂笔记
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li >
-                    02-02
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/2020/02/02/CS精英挑战营（1）栈的应用/" style="color: #0085a1">
-                        <span>
-                            CS精英挑战营（1）栈的应用
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li >
-                    02-01
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/2020/02/01/机器学习学习笔记（一）/" style="color: #0085a1">
-                        <span>
-                            机器学习学习笔记（一）
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li >
-                    02-01
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/2020/02/01/“2月1日-2月7日学习计划发布”/" style="color: #0085a1">
-                        <span>
-                            2月1日-2月7日学习计划
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
-                
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2020/02/02/CS精英挑战营（1）栈的应用/" data-toggle="tooltip" data-placement="top" title="CS精英挑战营（1）栈的应用">Next Post &rarr;</a>
+                    </li>
+                    
                 </ul>
+
+                <!-- tip start -->
+                
+
+                
+                <div class="comment_notes">
+                    <p>
+                        This is copyright.
+                    </p>
+                </div>
+                
+                <!-- tip end -->
+
+                <!-- Sharing -->
+                
+                <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                <!--  css & js -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!-- Sharing -->
+
+                <!-- gitment start -->
+                
+                <!-- gitment end -->
+
+                <!-- 来必力City版安装代码 -->
+                
+                <!-- City版安装代码已完成 -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
             </div>
             
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
 
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#LAMDA选修课" title="LAMDA选修课">LAMDA选修课</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="#" target="_blank">Felix&#39;s Blog</a></li>
+                    
+                        <li><a href="#" target="_blank">Felix&#39;s Web</a></li>
+                    
+                        <li><a href="https://github.com/felixzhang2000" target="_blank">Felix&#39;s Github</a></li>
+                    
+                        <li><a href="#" target="_blank">Other</a></li>
+                    
+                </ul>
+                
+            </div>
         </div>
     </div>
-</div>
-            </div>
+</article>
 
-            <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        
-<!--
-<h5>SEARCH</h5>
-<div class="search-article" class="tags">
-	<input id="search-kw" type="text" name="search_article" placeholder="Enter keywords for search" />
-	<div class="search-img">
-		<img 
-			src="/img/search.png" 
-			alt="search" 
-			onMouseOver="this.src='/img/search-focus.png'" 
-			onMouseOut="this.src='/img/search.png'"/>
-	</div>
-</div>-->
 
-<h5>SEARCH</h5>
-<div id="site_search">
-	<div class="form-group">
-		<input type="text" id="local-search-input" name="q" results="0" placeholder="search" class="st-search-input st-default-search-input form-control"/>
-	</div>  
-	<div id="local-search-result"></div>
-</div>
 
-        <hr>
-    
-        <!-- Featured Tags -->
 
-<section>
-    <!-- no hr -->
-    <h5><a href="/tags/">FEATURED TAGS</a></h5>
-    <div class="tags">
-        
-            
-        
-            
-        
-            
-        
-    </div>
-</section>
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
 
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-    <h5><a href="/about/">ABOUT ME</a></h5>
-    <div class="short-about">
 
-        
-            <img id = "avatar_pic" src="/img/shiba.jpg" />
-        
+<style  type="text/css">
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
 
-        
-            <p>Welcome to visit, I&#39;m Felix! \ I&#39;m interested in condensed physics and machine learning.</p>
-        
-
-        <!-- SNS Link -->
-        <ul class="list-inline">
-
-            
-                <li>
-                    <a target="_blank"  href="https://github.com/felixzhang2000">
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </a>
-                </li>
-            
-
-            
-
-            
-
-            
-                <li>
-                    <a target="_blank" href="https://www.zhihu.com/people/langmu-6">
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa  fa-stack-1x fa-inverse">知</i>
-                        </span>
-                    </a>
-                </li>
-            
-
-            
-
-            
-
-            
-
-        </ul>
-    </div>
-</section>
-        <hr>
-    
-        
-  <h5>VISITORS</h5>
-  <div class="widget">
-    <span>
-    	Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-	</span>
-	<br/>
-	<span>
-		<b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-	</span>
-  </div>
-
-        <hr>
-    
-        
-  <h5>RECENT POSTS</h5>
-  <div class="widget">
-    <ul>
-      
-        <li>
-          <a href="/2020/02/19/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E5%AF%BC%E8%AE%BA/">数据挖掘导论课堂笔记</a>
-        </li>
-      
-        <li>
-          <a href="/2020/02/02/CS%E7%B2%BE%E8%8B%B1%E6%8C%91%E6%88%98%E8%90%A5%EF%BC%881%EF%BC%89%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8/">CS精英挑战营（1）栈的应用</a>
-        </li>
-      
-        <li>
-          <a href="/2020/02/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">机器学习学习笔记（一）</a>
-        </li>
-      
-        <li>
-          <a href="/2020/02/01/%E2%80%9C2%E6%9C%881%E6%97%A5-2%E6%9C%887%E6%97%A5%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92%E5%8F%91%E5%B8%83%E2%80%9D/">2月1日-2月7日学习计划</a>
-        </li>
-      
-    </ul>
-  </div>
-
-        <hr>
-    
-        <!-- Friends Blog -->
-
-<h5>FRIENDS</h5>
-<ul class="list-inline">
-
-    
-        <li><a href="#" target="_blank">Felix&#39;s Blog</a></li>
-    
-        <li><a href="#" target="_blank">Felix&#39;s Web</a></li>
-    
-        <li><a href="https://github.com/felixzhang2000" target="_blank">Felix&#39;s Github</a></li>
-    
-        <li><a href="#" target="_blank">Other</a></li>
-    
-</ul>
-
-        <hr>
-    
-        
-    <h5>ARCHIVES</h5>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">4</span></li></ul>
-    </div>
-
-        <hr>
-    
-        <!-- Categories -->
-
-        <hr>
-    
-</div>
-
-        
-    </div>
-</div>
 
 
     <!-- Footer -->
