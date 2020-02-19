@@ -4,43 +4,11 @@
   
     
     <entry>
-      <title>数据挖掘导论课堂笔记</title>
+      <title>数据挖掘笔记</title>
       <link href="/2020/02/19/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E5%AF%BC%E8%AE%BA/"/>
       <url>/2020/02/19/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E5%AF%BC%E8%AE%BA/</url>
       
         <content type="html"><![CDATA[<h1 id="PART-I-INTRODUCTION"><a href="#PART-I-INTRODUCTION" class="headerlink" title="PART I INTRODUCTION"></a>PART I INTRODUCTION</h1><p>第四范式：基于数据认知，世界中每一个对象都对应于数据；</p><h2 id="2月19日"><a href="#2月19日" class="headerlink" title="2月19日"></a>2月19日</h2><p>Advances in technology：Hardware, software, internet;</p><p>Big data have big values;</p><h3 id="Why-Data-Mining"><a href="#Why-Data-Mining" class="headerlink" title="Why Data Mining?"></a>Why Data Mining?</h3><p>Knowledge, hidden relationships, underlying reality;</p><h5 id="Example-I-Mining-supermarket-transactions"><a href="#Example-I-Mining-supermarket-transactions" class="headerlink" title="Example I Mining supermarket transactions"></a>Example I Mining supermarket transactions</h5><h5 id="Example-II-Mining-the-valuable-customers"><a href="#Example-II-Mining-the-valuable-customers" class="headerlink" title="Example II Mining the valuable customers"></a>Example II Mining the valuable customers</h5><h5 id="Example-III-Mining-network-intrusion-patterns"><a href="#Example-III-Mining-network-intrusion-patterns" class="headerlink" title="Example III Mining network intrusion patterns"></a>Example III Mining network intrusion patterns</h5><h5 id="Example-IV-Mining-gene-data"><a href="#Example-IV-Mining-gene-data" class="headerlink" title="Example IV Mining gene data"></a>Example IV Mining gene data</h5><h5 id="Example-V-Mining-medical-data"><a href="#Example-V-Mining-medical-data" class="headerlink" title="Example V Mining medical data"></a>Example V Mining medical data</h5><p>computer-aided diagnosis;</p><h5 id="Example-VI-Mining-the-web"><a href="#Example-VI-Mining-the-web" class="headerlink" title="Example VI Mining the web"></a>Example VI Mining the web</h5><p>web structure, web content, web usage, web logs</p><p>interesting patterns, behavior identification</p><h5 id="Example-VII-Mining-financial-data"><a href="#Example-VII-Mining-financial-data" class="headerlink" title="Example VII Mining financial data"></a>Example VII Mining financial data</h5><p>fraud detection</p><p>stock trends discovery </p><h5 id="Example-VIII-Mining-software-data"><a href="#Example-VIII-Mining-software-data" class="headerlink" title="Example VIII Mining software data"></a>Example VIII Mining software data</h5><p>improve the software quality, productivity and user experience</p><p>automated debugging</p><h5 id="Example-IX-Mining-usage-data"><a href="#Example-IX-Mining-usage-data" class="headerlink" title="Example IX Mining usage data"></a>Example IX Mining usage data</h5><h5 id="Example-X-Mining-data-from-sensors"><a href="#Example-X-Mining-data-from-sensors" class="headerlink" title="Example X Mining data from sensors"></a>Example X Mining data from sensors</h5><p>技术要自主可控；</p><h5 id="Example-XI-Mining-data-of-arts"><a href="#Example-XI-Mining-data-of-arts" class="headerlink" title="Example XI Mining data of arts"></a>Example XI Mining data of arts</h5><h5 id="Example-XII-Audio-Generation"><a href="#Example-XII-Audio-Generation" class="headerlink" title="Example XII Audio Generation"></a>Example XII Audio Generation</h5><h5 id="Example-XIII-Image-Video-Editing"><a href="#Example-XIII-Image-Video-Editing" class="headerlink" title="Example XIII Image/Video Editing"></a>Example XIII Image/Video Editing</h5><p>more and more applications</p><p>对于不同的数据，性质不同，分析的技术不同；</p><p>Data mining is non-trivial process of identifying valid, novel, potentially useful, and ultimately understandable.</p><p>core: machine learning</p><h3 id="KDD-Knowledge-Discoverty-in-Data"><a href="#KDD-Knowledge-Discoverty-in-Data" class="headerlink" title="KDD: Knowledge Discoverty in Data"></a>KDD: Knowledge Discoverty in Data</h3><h3 id="What-kind-of-data-can-be-mined"><a href="#What-kind-of-data-can-be-mined" class="headerlink" title="What kind of data can be mined?"></a>What kind of data can be mined?</h3><p>(1) “Flat” data: table or data matrix</p><p><em>Attribute varible fields features</em></p><p>(2) Data warehouse: statistic option, data language (make decisions)</p><p>(3) Text data</p><p>(4) Multimedia data: image, audio, video</p><p>(5) Web date</p><p>(6) Social network data</p><p>(7) Temporal and spatial data</p><h3 id="How-to-categorize-data-mining-tasks"><a href="#How-to-categorize-data-mining-tasks" class="headerlink" title="How to categorize data mining tasks?"></a>How to categorize data mining tasks?</h3><p>(1) Descriptive mining tasks.</p><p>(2) Predictive mining tasks.</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> LAMDA选修课 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>CS精英挑战营（1）栈的应用</title>
-      <link href="/2020/02/02/CS%E7%B2%BE%E8%8B%B1%E6%8C%91%E6%88%98%E8%90%A5%EF%BC%881%EF%BC%89%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8/"/>
-      <url>/2020/02/02/CS%E7%B2%BE%E8%8B%B1%E6%8C%91%E6%88%98%E8%90%A5%EF%BC%881%EF%BC%89%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>机器学习学习笔记（一）</title>
-      <link href="/2020/02/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/"/>
-      <url>/2020/02/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</url>
-      
-        <content type="html"><![CDATA[]]></content>
       
       
       
@@ -55,17 +23,30 @@
     
     
     <entry>
-      <title>2月1日-2月7日学习计划</title>
-      <link href="/2020/02/01/%E2%80%9C2%E6%9C%881%E6%97%A5-2%E6%9C%887%E6%97%A5%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92%E5%8F%91%E5%B8%83%E2%80%9D/"/>
-      <url>/2020/02/01/%E2%80%9C2%E6%9C%881%E6%97%A5-2%E6%9C%887%E6%97%A5%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92%E5%8F%91%E5%B8%83%E2%80%9D/</url>
+      <title>CS精英挑战营（1）栈的应用</title>
+      <link href="/2020/02/02/CS%E7%B2%BE%E8%8B%B1%E6%8C%91%E6%88%98%E8%90%A5/"/>
+      <url>/2020/02/02/CS%E7%B2%BE%E8%8B%B1%E6%8C%91%E6%88%98%E8%90%A5/</url>
       
-        <content type="html"><![CDATA[<h1 id="2月1日-2月7日学习计划"><a href="#2月1日-2月7日学习计划" class="headerlink" title="2月1日-2月7日学习计划"></a>2月1日-2月7日学习计划</h1><h3 id="星期六"><a href="#星期六" class="headerlink" title="星期六"></a>星期六</h3><p>1.网课：计算思维；</p><p>2.OJ：预习周的四道题目；</p><p>3.PRML：第一章；</p><p>4.Python语言程序设计：第二周；</p><h3 id="星期日"><a href="#星期日" class="headerlink" title="星期日"></a>星期日</h3><p>1.网课：计算思维；</p><p>2.OJ：第一周习题课（一）；</p><p>3.PRML：第二章；</p><p>4.Python语言程序设计：第三周；</p><h3 id="星期一"><a href="#星期一" class="headerlink" title="星期一"></a>星期一</h3><p>1.网课：基础+贪心（1）；</p><p>2.OJ：第一周习题课（一）；</p><p>3.PRML：第三章；</p><p>4.Python 语言程序设计：第四周；</p><h3 id="星期二"><a href="#星期二" class="headerlink" title="星期二"></a>星期二</h3><p>1.网课：基础+贪心（2）；</p><p>2.OJ：第一周习题课（二）；</p><p>3.PRML：第四章；</p><p>4.Python语言程序设计：第五周；</p><h3 id="星期三"><a href="#星期三" class="headerlink" title="星期三"></a>星期三</h3><p>1.OJ：第一周习题课（二）；</p><p>2.PRML：第五章；</p><p>3.Python 语言程序设计：第六周；</p><h3 id="星期四"><a href="#星期四" class="headerlink" title="星期四"></a>星期四</h3><p>1.OJ：第一周习题课（三）；</p><p>2.PRML：第六章；</p><p>3.Python 语言程序设计：第七周；</p><h3 id="星期五"><a href="#星期五" class="headerlink" title="星期五"></a>星期五</h3><p>1.网课：第一周习题课</p><p>2.PRML：第七章；</p><p>3.Python语言程序设计：综合复习；</p>]]></content>
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>机器学习笔记</title>
+      <link href="/2020/02/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <url>/2020/02/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[]]></content>
       
       
       
         <tags>
             
-            <tag> 计划 </tag>
+            <tag> 计算机技术 </tag>
             
         </tags>
       
