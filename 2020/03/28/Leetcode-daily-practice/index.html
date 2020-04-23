@@ -122,8 +122,8 @@
                         
                             <div class="blank_box"></div>
                             <span class="meta">
-                                Words <span class="post-count">2.7k</span> and
-                                Reading Time <span class="post-count">11</span> Minutes
+                                Words <span class="post-count">4.5k</span> and
+                                Reading Time <span class="post-count">19</span> Minutes
                             </span>
                             <div class="blank_box"></div>
                             <!-- 不蒜子统计 start -->
@@ -184,13 +184,6 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/about/">About</a>
                         </li>
                         
@@ -198,7 +191,7 @@
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
@@ -206,6 +199,13 @@
                         
                         <li>
                             <a href="/photography/">Photography</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -262,7 +262,7 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h3 id="717-1比特和2比特字符"><a href="#717-1比特和2比特字符" class="headerlink" title="717.1比特和2比特字符"></a>717.1比特和2比特字符</h3><p>有两种特殊字符。第一种字符可以用一比特0来表示。第二种字符可以用两比特(10 或 11)来表示。</p>
+                <h4 id="717-1比特和2比特字符"><a href="#717-1比特和2比特字符" class="headerlink" title="717.1比特和2比特字符"></a>717.1比特和2比特字符</h4><p>有两种特殊字符。第一种字符可以用一比特0来表示。第二种字符可以用两比特(10 或 11)来表示。</p>
 <p>现给一个由若干比特组成的字符串。问最后一个字符是否必定为一个一比特字符。给定的字符串总是由0结束。</p>
 <p><strong>示例 1:</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入: </span><br><span class="line">bits &#x3D; [1, 0, 0]</span><br><span class="line">输出: True</span><br><span class="line">解释: </span><br><span class="line">唯一的编码方式是一个两比特字符和一个一比特字符。所以最后一个字符是一比特字符。</span><br></pre></td></tr></table></figure>
@@ -273,7 +273,7 @@
 <p><code>bits[i] 总是0 或 1.</code></p>
 <p><strong>代码</strong></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">  <span class="function"><span class="keyword">bool</span> <span class="title">Judge</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; bits)</span></span>&#123;</span><br><span class="line">    <span class="comment">//从倒数第二项开始，统计连续1的个数</span></span><br><span class="line">    <span class="keyword">int</span> i = <span class="built_in">bit</span>.<span class="built_in">size</span>() - <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span>( i &gt;= <span class="number">0</span> &amp;&amp; bits[i] == <span class="number">1</span>) i--;</span><br><span class="line">    <span class="comment">//若连续1的个数为奇数，则最后一项必然为2比特，否则为1比特</span></span><br><span class="line">    <span class="keyword">return</span> (bits.<span class="built_in">size</span>() - i)%<span class="number">2</span> == <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="1386-两个数组间的距离值"><a href="#1386-两个数组间的距离值" class="headerlink" title="1386.两个数组间的距离值"></a>1386.两个数组间的距离值</h3><p>给你两个整数数组 <code>arr1</code> ， <code>arr2</code> 和一个整数 <code>d</code> ，请你返回两个数组之间的 <strong>距离值</strong> 。</p>
+<h4 id="1386-两个数组间的距离值"><a href="#1386-两个数组间的距离值" class="headerlink" title="1386.两个数组间的距离值"></a>1386.两个数组间的距离值</h4><p>给你两个整数数组 <code>arr1</code> ， <code>arr2</code> 和一个整数 <code>d</code> ，请你返回两个数组之间的 <strong>距离值</strong> 。</p>
 <p>「<strong>距离值</strong>」 定义为符合此描述的元素数目：对于元素 <code>arr1[i]</code> ，不存在任何元素 <code>arr2[j]</code> 满足 <code>|arr1[i]-arr2[j]| &lt;= d</code> 。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">输入：arr1 &#x3D; [4,5,8], arr2 &#x3D; [10,9,1,8], d &#x3D; 2</span><br><span class="line">输出：2</span><br><span class="line">解释：</span><br><span class="line">对于 arr1[0]&#x3D;4 我们有：</span><br><span class="line">|4-10|&#x3D;6 &gt; d&#x3D;2 </span><br><span class="line">|4-9|&#x3D;5 &gt; d&#x3D;2 </span><br><span class="line">|4-1|&#x3D;3 &gt; d&#x3D;2 </span><br><span class="line">|4-8|&#x3D;4 &gt; d&#x3D;2 </span><br><span class="line">对于 arr1[1]&#x3D;5 我们有：</span><br><span class="line">|5-10|&#x3D;5 &gt; d&#x3D;2 </span><br><span class="line">|5-9|&#x3D;4 &gt; d&#x3D;2 </span><br><span class="line">|5-1|&#x3D;4 &gt; d&#x3D;2 </span><br><span class="line">|5-8|&#x3D;3 &gt; d&#x3D;2</span><br><span class="line">对于 arr1[2]&#x3D;8 我们有：</span><br><span class="line">|8-10|&#x3D;2 &lt;&#x3D; d&#x3D;2</span><br><span class="line">|8-9|&#x3D;1 &lt;&#x3D; d&#x3D;2</span><br><span class="line">|8-1|&#x3D;7 &gt; d&#x3D;2</span><br><span class="line">|8-8|&#x3D;0 &lt;&#x3D; d&#x3D;2</span><br></pre></td></tr></table></figure>
@@ -295,7 +295,7 @@
 <p>（1）一共有三个参数：（开头，末尾，查找的值），可以用A.begin()和A.end()指定范围；</p>
 <p>（2）返回值为<strong>不小于查找值</strong>的元素所在位置的编号（注意，编号从0开始）；否则越界截断；</p>
 <p>（3）使用lower_bound算法需要注意两点：处理的数列已排序（sort算法），调用Algorithm库；</p>
-<h3 id="997-找到小镇的法官"><a href="#997-找到小镇的法官" class="headerlink" title="997. 找到小镇的法官"></a>997. 找到小镇的法官</h3><p>在一个小镇里，按从 <code>1</code> 到 <code>N</code> 标记了 <code>N</code> 个人。传言称，这些人中有一个是小镇上的秘密法官。</p>
+<h4 id="997-找到小镇的法官"><a href="#997-找到小镇的法官" class="headerlink" title="997. 找到小镇的法官"></a>997. 找到小镇的法官</h4><p>在一个小镇里，按从 <code>1</code> 到 <code>N</code> 标记了 <code>N</code> 个人。传言称，这些人中有一个是小镇上的秘密法官。</p>
 <p>如果小镇的法官真的存在，那么：</p>
 <ol>
 <li>小镇的法官不相信任何人。</li>
@@ -357,6 +357,97 @@
 <p><strong>二分查找</strong></p>
 <p>由于题目给定了数组中数字范围，即1到n，则最终的答案也在二者之中；可以考虑使用二分法，依次考虑小于mid的数字的出现的次数，若比较大， 则再做一次二分查找，最后即可以找到目标值;</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">solution</span>&#123;</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findDuplicate</span><span class="params">(<span class="keyword">int</span>[] nums)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> <span class="built_in">size</span> = nums.length;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">1</span>, r = <span class="built_in">size</span> - <span class="number">1</span>;</span><br><span class="line">    <span class="comment">//二分查找基本思路</span></span><br><span class="line">    <span class="keyword">while</span>(l &lt; r)&#123;</span><br><span class="line">      <span class="keyword">int</span> mid = (l + r)/<span class="number">2</span>;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> num:nums)&#123;</span><br><span class="line">        <span class="keyword">if</span> (num &lt;= mid) cnt++;</span><br><span class="line">      &#125;</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">if</span> (cnt &gt; mid)&#123;</span><br><span class="line">        r = mid;</span><br><span class="line">      &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        l = mid + <span class="number">1</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="73-矩阵置零"><a href="#73-矩阵置零" class="headerlink" title="73. 矩阵置零"></a>73. 矩阵置零</h4><p>给定一个 <em>m</em> x <em>n</em> 的矩阵，如果一个元素为 0，则将其所在行和列的所有元素都设为 0。请使用<strong><a href="http://baike.baidu.com/item/原地算法" target="_blank" rel="noopener">原地</a></strong>算法<strong>。</strong></p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">输入: </span><br><span class="line">[</span><br><span class="line">  [1,1,1],</span><br><span class="line">  [1,0,1],</span><br><span class="line">  [1,1,1]</span><br><span class="line">]</span><br><span class="line">输出: </span><br><span class="line">[</span><br><span class="line">  [1,0,1],</span><br><span class="line">  [0,0,0],</span><br><span class="line">  [1,0,1]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">输入: </span><br><span class="line">[</span><br><span class="line">  [0,1,2,0],</span><br><span class="line">  [3,4,5,2],</span><br><span class="line">  [1,3,1,5]</span><br><span class="line">]</span><br><span class="line">输出: </span><br><span class="line">[</span><br><span class="line">  [0,0,0,0],</span><br><span class="line">  [0,4,5,0],</span><br><span class="line">  [0,3,1,0]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p><strong>进阶:</strong></p>
+<ul>
+<li>一个直接的解决方案是使用  O(<em>m**n</em>) 的额外空间，但这并不是一个好的解决方案。</li>
+<li>一个简单的改进方案是使用 O(<em>m</em> + <em>n</em>) 的额外空间，但这仍然不是最好的解决方案。</li>
+<li>你能想出一个常数空间的解决方案吗？</li>
+</ul>
+<p><strong>我的思路</strong></p>
+<p>设置两个空数组用于存储行列指标，之后再做处理；</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">solution</span>&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">setZeroes</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; matrix)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m = matrix.<span class="built_in">size</span>(), n = matrix[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line">    <span class="keyword">if</span> (m == <span class="number">0</span>||n == <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; label_i, label_j;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i)&#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; ++j)&#123;</span><br><span class="line">        <span class="keyword">if</span> (matrix[i][j] == <span class="number">0</span>)&#123;</span><br><span class="line">          label_i.push_back(i);</span><br><span class="line">          label_j.push_back(j);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> len = label_i.<span class="built_in">size</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; len; ++K)&#123;</span><br><span class="line">      <span class="keyword">int</span> tmpi = label_i[k], tmpj = label_j[k];</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) matrix[i][tmpj] = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; ++j) matrix[tmpi][j] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="994-腐烂的橘子"><a href="#994-腐烂的橘子" class="headerlink" title="994. 腐烂的橘子"></a>994. 腐烂的橘子</h4><p>在给定的网格中，每个单元格可以有以下三个值之一：</p>
+<ul>
+<li>值 <code>0</code> 代表空单元格；</li>
+<li>值 <code>1</code> 代表新鲜橘子；</li>
+<li>值 <code>2</code> 代表腐烂的橘子。</li>
+</ul>
+<p>每分钟，任何与腐烂的橘子（在 4 个正方向上）相邻的新鲜橘子都会腐烂。</p>
+<p>返回直到单元格中没有新鲜橘子为止所必须经过的最小分钟数。如果不可能，返回 <code>-1</code>。</p>
+<p><strong>示例 1：</strong></p>
+<p><strong><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/02/16/oranges.png" alt="img"></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：[[2,1,1],[1,1,0],[0,1,1]]</span><br><span class="line">输出：4</span><br></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：[[2,1,1],[0,1,1],[1,0,1]]</span><br><span class="line">输出：-1</span><br><span class="line">解释：左下角的橘子（第 2 行， 第 0 列）永远不会腐烂，因为腐烂只会发生在 4 个正向上。</span><br></pre></td></tr></table></figure>
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：[[0,2]]</span><br><span class="line">输出：0</span><br><span class="line">解释：因为 0 分钟时已经没有新鲜橘子了，所以答案就是 0 。</span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ol>
+<li><code>1 &lt;= grid.length &lt;= 10</code></li>
+<li><code>1 &lt;= grid[0].length &lt;= 10</code></li>
+<li><code>grid[i][j]</code> 仅为 <code>0</code>、<code>1</code> 或 <code>2</code></li>
+</ol>
+<h4 id="1227-飞机座位分配概率（动态规划）"><a href="#1227-飞机座位分配概率（动态规划）" class="headerlink" title="1227. 飞机座位分配概率（动态规划）"></a>1227. 飞机座位分配概率（动态规划）</h4><p>有 <code>n</code> 位乘客即将登机，飞机正好有 <code>n</code> 个座位。第一位乘客的票丢了，他随便选了一个座位坐下。</p>
+<p>剩下的乘客将会：</p>
+<ul>
+<li>如果他们自己的座位还空着，就坐到自己的座位上，</li>
+<li>当他们自己的座位被占用时，随机选择其他座位</li>
+</ul>
+<p>第 <code>n</code> 位乘客坐在自己的座位上的概率是多少？</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：n &#x3D; 1</span><br><span class="line">输出：1.00000</span><br><span class="line">解释：第一个人只会坐在自己的位置上。</span><br></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: n &#x3D; 2</span><br><span class="line">输出: 0.50000</span><br><span class="line">解释：在第一个人选好座位坐下后，第二个人坐在自己的座位上的概率是 0.5。</span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 10^5</code></li>
+</ul>
+<p><strong>参考解答</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(1)第一位乘客若选择了本就是其自己的位置，则后面的人都会按顺序入座，第n位乘客入座概率为1&#x2F;n;</span><br><span class="line">(2)第一位乘客刚好选择了第n位乘客的位置，则第n位乘客成功入学概率为0；</span><br><span class="line">(3)第一位乘客选择了第i位乘客(i不为0或1)的座位，则可把第i位乘客看作忘带票乘客选择n-1个座位，写出递推公式；</span><br></pre></td></tr></table></figure>
+<script type="math/tex; mode=display">
+f(n) = \frac{1}{n} +\frac{n-2}{n}f(n-1)</script><h4 id="236-二叉树的最近公共祖先"><a href="#236-二叉树的最近公共祖先" class="headerlink" title="236.二叉树的最近公共祖先"></a>236.二叉树的最近公共祖先</h4><p>给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。</p>
+<p>百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”</p>
+<p>例如，给定如下二叉树:  root = [3,5,1,6,2,0,8,null,null,7,4]</p>
+<p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/15/binarytree.png" alt="img"></p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: root &#x3D; [3,5,1,6,2,0,8,null,null,7,4], p &#x3D; 5, q &#x3D; 1</span><br><span class="line">输出: 3</span><br><span class="line">解释: 节点 5 和节点 1 的最近公共祖先是节点 3。</span><br></pre></td></tr></table></figure>
+<p><strong>示例2</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: root &#x3D; [3,5,1,6,2,0,8,null,null,7,4], p &#x3D; 5, q &#x3D; 4</span><br><span class="line">输出: 5</span><br><span class="line">解释: 节点 5 和节点 4 的最近公共祖先是节点 5。因为根据定义最近公共祖先节点可以为节点本身。</span><br></pre></td></tr></table></figure>
+<p><strong>说明:</strong></p>
+<p>所有节点的值都是唯一的。<br>p、q 为不同节点且均存在于给定的二叉树中。</p>
+<p><strong>思路</strong></p>
+<p>p和q的分布存在两种情况，在同一侧或者不同侧中，则考虑对左右子树分别进行递归操作；</p>
+<p>递归的返回条件为root为空或者root为p或者q中一个；</p>
+<p>之后判断：若左右子树均有返回值，则说明存在于左右子树中，返回当前节点；反之，则非空返回结点为公共节点；</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span>&#123;</span></span><br><span class="line">  <span class="keyword">int</span> val;</span><br><span class="line">  TreeNode* left;</span><br><span class="line">  TreeNode* right;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">solution</span>&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">  <span class="function">TreeNode <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode *root, <span class="keyword">int</span> p, <span class="keyword">int</span> q)</span></span>&#123;</span><br><span class="line">    <span class="comment">//若root为空或者等于p或者q中的一个，则返回root</span></span><br><span class="line">    <span class="keyword">if</span> (!root || root == p || root == q) <span class="keyword">return</span> root;</span><br><span class="line">    <span class="comment">//查询左子树和右子树</span></span><br><span class="line">    TreeNode *left = lowestCommonAncestor(root-&gt;left, p, q);</span><br><span class="line">    TreeNode *right = lowestCommonAncestor(root-&gt;right, p, q);</span><br><span class="line">    <span class="comment">//若左右均有返回值，则说明p,q位于两侧，直接返回此时的根节点</span></span><br><span class="line">    <span class="keyword">if</span> (left &amp;&amp; right) <span class="keyword">return</span> root;</span><br><span class="line">    <span class="comment">//若只有一侧有返回值，则返回此时非空变量即可</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> left?left: right;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="1319-连通网络的操作次数"><a href="#1319-连通网络的操作次数" class="headerlink" title="1319. 连通网络的操作次数"></a>1319. 连通网络的操作次数</h4><p>用以太网线缆将 <code>n</code> 台计算机连接成一个网络，计算机的编号从 <code>0</code> 到 <code>n-1</code>。线缆用 <code>connections</code> 表示，其中 <code>connections[i] = [a, b]</code> 连接了计算机 <code>a</code> 和 <code>b</code>。</p>
+<p>网络中的任何一台计算机都可以通过网络直接或者间接访问同一个网络中其他任意一台计算机。</p>
+<p>给你这个计算机网络的初始布线 <code>connections</code>，你可以拔开任意两台直连计算机之间的线缆，并用它连接一对未直连的计算机。请你计算并返回使所有计算机都连通所需的最少操作次数。如果不可能，则返回 -1 。 </p>
+<p><strong>示例 1：</strong></p>
+<p><strong><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/01/11/sample_1_1677.png" alt="img"></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：n &#x3D; 4, connections &#x3D; [[0,1],[0,2],[1,2]]</span><br><span class="line">输出：1</span><br><span class="line">解释：拔下计算机 1 和 2 之间的线缆，并将它插到计算机 1 和 3 上。</span><br></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<p><strong><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/01/11/sample_2_1677.png" alt="img"></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：n &#x3D; 6, connections &#x3D; [[0,1],[0,2],[0,3],[1,2],[1,3]]</span><br><span class="line">输出：2</span><br></pre></td></tr></table></figure>
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：n &#x3D; 6, connections &#x3D; [[0,1],[0,2],[0,3],[1,2]]</span><br><span class="line">输出：-1</span><br><span class="line">解释：线缆数量不足。</span><br></pre></td></tr></table></figure>
+<p><strong>示例 4：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：n &#x3D; 5, connections &#x3D; [[0,1],[0,2],[3,4],[2,3]]</span><br><span class="line">输出：0</span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 10^5</code></li>
+<li><code>1 &lt;= connections.length &lt;= min(n*(n-1)/2, 10^5)</code></li>
+<li><code>connections[i].length == 2</code></li>
+<li><code>0 &lt;= connections[i][0], connections[i][1] &lt; n</code></li>
+<li><code>connections[i][0] != connections[i][1]</code></li>
+<li>没有重复的连接。</li>
+<li>两台计算机不会通过多条线缆连接。</li>
+</ul>
 
                 
                 <hr>

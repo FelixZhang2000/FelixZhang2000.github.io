@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://dusign.net/2020/03/28/Leetcode-daily-practice/</loc>
+    <lastmod>2020-04-23</lastmod>
+  </url>  <url>
+    <loc>https://dusign.net/2020/04/19/python%E7%8E%A9%E8%BD%AC%E6%95%B0%E6%8D%AE/</loc>
+    <lastmod>2020-04-23</lastmod>
+  </url>  <url>
+    <loc>https://dusign.net/2020/02/19/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E5%AF%BC%E8%AE%BA/</loc>
+    <lastmod>2020-04-22</lastmod>
+  </url>  <url>
     <loc>https://dusign.net/2020/03/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</loc>
-    <lastmod>2020-04-12</lastmod>
+    <lastmod>2020-04-21</lastmod>
   </url>  <url>
     <loc>https://dusign.net/2020/03/26/%E7%AC%AC%E5%85%AD%E5%AD%A6%E6%9C%9F%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92%EF%BC%88%E6%97%A5%E6%9B%B4%EF%BC%89/</loc>
-    <lastmod>2020-04-07</lastmod>
+    <lastmod>2020-04-20</lastmod>
   </url>  <url>
     <loc>https://dusign.net/2020/04/07/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2020-04-07</lastmod>
-  </url>  <url>
-    <loc>https://dusign.net/2020/03/28/Leetcode-daily-practice/</loc>
     <lastmod>2020-04-07</lastmod>
   </url>  <url>
     <loc>https://dusign.net/2020/04/03/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B0/</loc>
@@ -21,8 +27,5 @@
   </url>  <url>
     <loc>https://dusign.net/2020/02/02/CS%E7%B2%BE%E8%8B%B1%E6%8C%91%E6%88%98%E8%90%A5/</loc>
     <lastmod>2020-02-23</lastmod>
-  </url>  <url>
-    <loc>https://dusign.net/2020/02/19/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E5%AF%BC%E8%AE%BA/</loc>
-    <lastmod>2020-02-19</lastmod>
   </url>
 </urlset>

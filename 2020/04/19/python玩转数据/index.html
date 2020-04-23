@@ -16,11 +16,11 @@
     <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
     <title>
         
-          机器学习导论 - Felix Zhang
+          python玩转数据 - Felix Zhang
         
     </title>
 
-    <link rel="canonical" href="https://dusign.net/2020/02/01/机器学习导论/">
+    <link rel="canonical" href="https://dusign.net/2020/04/19/python玩转数据/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -109,21 +109,21 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#计算机技术" title="计算机技术">计算机技术</a>
+                              <a class="tag" href="/tags/#课堂笔记" title="课堂笔记">课堂笔记</a>
                             
                         </div>
-                        <h1>机器学习导论</h1>
+                        <h1>python玩转数据</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by Felix Zhang on
-                            2020-02-01
+                            2020-04-19
                         </span>
 
                         
                             <div class="blank_box"></div>
                             <span class="meta">
-                                Words <span class="post-count">0</span> and
-                                Reading Time <span class="post-count">1</span> Minutes
+                                Words <span class="post-count">1.2k</span> and
+                                Reading Time <span class="post-count">4</span> Minutes
                             </span>
                             <div class="blank_box"></div>
                             <!-- 不蒜子统计 start -->
@@ -262,16 +262,63 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                
+                <h2 id="MODULE-1"><a href="#MODULE-1" class="headerlink" title="MODULE 1"></a>MODULE 1</h2><h4 id="走进python"><a href="#走进python" class="headerlink" title="走进python"></a>走进python</h4><p>hello world</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mystring = <span class="string">'hello world'</span></span><br><span class="line">print(mystring)</span><br></pre></td></tr></table></figure>
+<p>运行程序：（1）交互式解释器shell（2）文件（以.py为扩展名）</p>
+<p>安装第三方库： pip install <em>(库名)</em></p>
+<p>输出：利用Print函数 参数为变量名or字符串</p>
+<p>输入：Input函数  变量名 = 变量类型（ input(‘提示语句’)）</p>
+<h4 id="python风格"><a href="#python风格" class="headerlink" title="python风格"></a>python风格</h4><p>注释：#开头表示</p>
+<p>换行：三引号下的数据可以不用加换行符号；</p>
+<p>缩进：不需要括号，直接用冒号，然后控制缩进；</p>
+<h4 id="python语法基础"><a href="#python语法基础" class="headerlink" title="python语法基础"></a>python语法基础</h4><p>变量：标注对象or引用对象；变量名命名受C语言影响：首字母必须是字母or下划线；其余可以是字母、下划线、数字；大小写敏感；尽量避免下划线开头的变量名；尽量不使用拼音，使用英文；驼峰式、下划线式不混用；关键字不可用做变量名；</p>
+<p>运算符有优先级顺序，表达式一定要有运算结果；</p>
+<p>赋值：python是动态强类型语言，通过引用的方式赋值，无需显式声明变量类型；可用<em>id()</em>函数查看内存空间；[-5,256]范围内的数字可以存储在同一内存空间，方便使用；增量赋值，链式赋值，多重赋值；</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#多重赋值的本质是元组打包、序列解包</span></span><br><span class="line">x,y = y,x</span><br><span class="line">PI, r = <span class="number">3.1415926</span>, <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p>语句：用于完成一个任务；表达式：任务中的一步；</p>
+<h4 id="Python数据类型"><a href="#Python数据类型" class="headerlink" title="Python数据类型"></a>Python数据类型</h4><p>（1）整型（int）：Python中整型基本不存在溢出问题</p>
+<p>（2）布尔型（bool）：其实整型的一个子类，只有true\false两个值，本质上也是由1\0存储的</p>
+<p>（3）浮点型（float）：数学中的实数，用类似科学计数法表示</p>
+<p>（4）复数型（complex）：虚数部分用$j$标记，可以使用.real和.imag分别取得实数和复数部分，可以用.conjugate获得共轭复数</p>
+<p>（5）字符串：可使用单引号、双引号和三引号（三个单引号）鉴别，三引号中可以自由使用单引号和双引号；可以使用索引操作符，可以使用+将两个字符串连接在一起；</p>
+<p>（6）映射类型-字典：用大括号来鉴别，成员是有键和值成对的对象，类似于哈希表的键值对；</p>
+<h4 id="Python基本运算"><a href="#Python基本运算" class="headerlink" title="Python基本运算"></a>Python基本运算</h4><p>（1）算术运算：+、-、<em>、/、*</em>（乘方运算）、%（取余）、//（整除）</p>
+<p>（2）比较运算：Python可以使用连续的比较运算；&gt;、&lt;、==、!=；</p>
+<p>（3）逻辑运算：not \ and \or （与C++中不一样，Python中可直接使用中文）</p>
+<p>（4）字符运算符：r\R表示原始字符串，用于一些不需要转义自负的地方</p>
+<p>比较运算和逻辑运算的结果为bool型的值；</p>
+<h4 id="Python的函数、模块"><a href="#Python的函数、模块" class="headerlink" title="Python的函数、模块"></a>Python的函数、模块</h4><p>（1）函数：完成特定功能的一段代码；</p>
+<p>内建函数：数值型内建函数、实用函数；可用help()查看某个内建函数的信息；</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">round(),四舍五入取整;(内建函数)</span><br><span class="line">floor(),向下取整（需<span class="keyword">import</span> math）</span><br></pre></td></tr></table></figure>
+<p>标准库函数（Python标准支持，需要倒入模块）、第三方库（需安装）、用户自定义（自行设计）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &lt;模块名<span class="number">1</span>&gt;&lt;模块名<span class="number">2</span>&gt;</span><br><span class="line"><span class="keyword">from</span> &lt;模块名&gt; <span class="keyword">import</span> &lt;模块部分&gt;</span><br></pre></td></tr></table></figure>
+<p>包（Package）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">一个有层次的文件目录结构；</span><br><span class="line">定义了一个由模块和子包组成的Python应用程序执行环境；</span><br></pre></td></tr></table></figure>
+<p>库（library）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一组模块集合</span><br></pre></td></tr></table></figure>
+<p>print可以支持同时输出多个变量；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">runfile(),</span><br></pre></td></tr></table></figure>
+<h2 id="MODULE-2"><a href="#MODULE-2" class="headerlink" title="MODULE 2"></a>MODULE 2</h2><p>三种结构：顺序、选择、重复</p>
+<h4 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> &lt;条件表达式&gt;：</span><br><span class="line">  &lt;执行语句&gt;</span><br><span class="line"><span class="keyword">elif</span> &lt;条件表达式&gt;:</span><br><span class="line">  &lt;执行语句&gt;</span><br><span class="line"><span class="keyword">elif</span> &lt;条件表达式&gt;:</span><br><span class="line">  &lt;执行语句&gt;</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  &lt;执行语句&gt;</span><br></pre></td></tr></table></figure>
+<p>另外，还可以使用条件嵌套和条件返回式；</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x <span class="keyword">if</span> &lt;expression&gt; <span class="keyword">else</span> y</span><br></pre></td></tr></table></figure>
+<h4 id="range-函数：用于产生一组有规矩的数列"><a href="#range-函数：用于产生一组有规矩的数列" class="headerlink" title="range()函数：用于产生一组有规矩的数列"></a>range()函数：用于产生一组有规矩的数列</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">range(start, end, step)</span><br><span class="line">range(start, end)</span><br><span class="line">range(end)</span><br><span class="line"><span class="comment">#包含起始值，不包含终止值，默认步长为1，起始值为0</span></span><br><span class="line"><span class="comment">#循环中使用较多，适合与for连用</span></span><br></pre></td></tr></table></figure>
+<h4 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> &lt;expression&gt;:</span><br><span class="line">  &lt;expression&gt;</span><br><span class="line"><span class="comment">#while循环在条件满足时循环</span></span><br><span class="line"><span class="keyword">for</span> iter_var <span class="keyword">in</span> iterable_object:</span><br><span class="line">  suite_to_repeat</span><br><span class="line"><span class="comment">#获取可迭代对象，产生迭代器；可以用作列表解析与生成表达式，还可以遍历数据集</span></span><br><span class="line"><span class="comment">#索引迭代seq[i]、序列本身迭代</span></span><br></pre></td></tr></table></figure>
+<p>for循环是一个语法糖：将复杂的语法规则内含化；</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#最大公约数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gcd</span><span class="params">(x, y)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> x &lt; y:</span><br><span class="line">    x, y = y, x</span><br><span class="line">  <span class="keyword">while</span> x % y != <span class="number">0</span>:</span><br><span class="line">    r = x%y</span><br><span class="line">    x = y</span><br><span class="line">    y = r</span><br><span class="line">  <span class="keyword">return</span> y</span><br></pre></td></tr></table></figure>
+<p>其它语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">break：跳出当前循环，提前终止；</span><br><span class="line">continue: 条件满足时跳过continue后的语句，停止当前，进入下一轮；</span><br><span class="line">else: 如果循环从break截止，无法执行；若是正常结束的，则会执行else语句；</span><br></pre></td></tr></table></figure>
+<p>素数的计算机定义：如果无法被2到sqrt(N)之间的数整除，则为素数</p>
+
                 
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2020/02/02/CS精英挑战营/" data-toggle="tooltip" data-placement="top" title="CS精英挑战营（2020年寒假班）">&larr; Previous Post</a>
-                    </li>
                     
+                    <li class="next">
+                        <a href="/2020/04/07/算法导论学习/" data-toggle="tooltip" data-placement="top" title="算法导论学习">Next Post &rarr;</a>
+                    </li>
                     
                 </ul>
 
@@ -326,7 +373,7 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#计算机技术" title="计算机技术">计算机技术</a>
+                          <a class="tag" href="/tags/#课堂笔记" title="课堂笔记">课堂笔记</a>
                         
                     </div>
                 </section>
