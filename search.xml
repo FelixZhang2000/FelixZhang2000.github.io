@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>固体物理笔记</title>
+      <link href="/2020/04/23/%E5%9B%BA%E4%BD%93%E7%89%A9%E7%90%86%E7%AC%94%E8%AE%B0/"/>
+      <url>/2020/04/23/%E5%9B%BA%E4%BD%93%E7%89%A9%E7%90%86%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="晶体结构"><a href="#晶体结构" class="headerlink" title="晶体结构"></a>晶体结构</h1><h1 id="晶体的结合"><a href="#晶体的结合" class="headerlink" title="晶体的结合"></a>晶体的结合</h1><h1 id="晶格动力学与晶体的热力学性质"><a href="#晶格动力学与晶体的热力学性质" class="headerlink" title="晶格动力学与晶体的热力学性质"></a>晶格动力学与晶体的热力学性质</h1><h1 id="能带论"><a href="#能带论" class="headerlink" title="能带论"></a>能带论</h1><h1 id="金属电子论"><a href="#金属电子论" class="headerlink" title="金属电子论"></a>金属电子论</h1>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 凝聚态物理爱好者 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>python玩转数据</title>
       <link href="/2020/04/19/python%E7%8E%A9%E8%BD%AC%E6%95%B0%E6%8D%AE/"/>
       <url>/2020/04/19/python%E7%8E%A9%E8%BD%AC%E6%95%B0%E6%8D%AE/</url>
@@ -30,25 +49,6 @@
         <content type="html"><![CDATA[<h3 id="第四部分：高级设计与分析技术"><a href="#第四部分：高级设计与分析技术" class="headerlink" title="第四部分：高级设计与分析技术"></a>第四部分：高级设计与分析技术</h3><h4 id="第15章：动态规划（4月7日）"><a href="#第15章：动态规划（4月7日）" class="headerlink" title="第15章：动态规划（4月7日）"></a>第15章：动态规划（4月7日）</h4>]]></content>
       
       
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>力扣刷题日记</title>
-      <link href="/2020/04/03/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B0/"/>
-      <url>/2020/04/03/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B0/</url>
-      
-        <content type="html"><![CDATA[<h3 id="4月3日"><a href="#4月3日" class="headerlink" title="4月3日"></a>4月3日</h3><p>（1）对于数组、vector、list等一定要记得考虑为空的情况；</p><p>（2）对于无序的数组，可以尝试先排序再处理，思路会简单些；</p><h4 id="4月4日"><a href="#4月4日" class="headerlink" title="4月4日"></a>4月4日</h4><p>接雨水问题可以按照行来求，关键想清楚其中的几何构型</p><h4 id="4月5日"><a href="#4月5日" class="headerlink" title="4月5日"></a>4月5日</h4><p>单调栈：用于对特定元素的后方的大小排序</p><h4 id="4月6日"><a href="#4月6日" class="headerlink" title="4月6日"></a>4月6日</h4><p>处理数组时往往有一种思维定势，那便是数组非空。在写代码的过程中，别忘了对于空数组的考虑。</p><h4 id="4月7日"><a href="#4月7日" class="headerlink" title="4月7日"></a>4月7日</h4><p>一、循环检测法</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 备战保研 </tag>
-            
-        </tags>
       
     </entry>
     
@@ -112,47 +112,9 @@
     
     
     <entry>
-      <title>数据挖掘笔记</title>
-      <link href="/2020/02/19/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E5%AF%BC%E8%AE%BA/"/>
-      <url>/2020/02/19/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E5%AF%BC%E8%AE%BA/</url>
-      
-        <content type="html"><![CDATA[<h1 id="PART-I-INTRODUCTION"><a href="#PART-I-INTRODUCTION" class="headerlink" title="PART I INTRODUCTION"></a>PART I INTRODUCTION</h1><p>第四范式：基于数据认知，世界中每一个对象都对应于数据；</p><h2 id="2月19日"><a href="#2月19日" class="headerlink" title="2月19日"></a>2月19日</h2><p>Advances in technology：Hardware, software, internet;</p><p>Big data have big values;</p><h3 id="Why-Data-Mining"><a href="#Why-Data-Mining" class="headerlink" title="Why Data Mining?"></a>Why Data Mining?</h3><p>Knowledge, hidden relationships, underlying reality;</p><h5 id="Example-I-Mining-supermarket-transactions"><a href="#Example-I-Mining-supermarket-transactions" class="headerlink" title="Example I Mining supermarket transactions"></a>Example I Mining supermarket transactions</h5><h5 id="Example-II-Mining-the-valuable-customers"><a href="#Example-II-Mining-the-valuable-customers" class="headerlink" title="Example II Mining the valuable customers"></a>Example II Mining the valuable customers</h5><h5 id="Example-III-Mining-network-intrusion-patterns"><a href="#Example-III-Mining-network-intrusion-patterns" class="headerlink" title="Example III Mining network intrusion patterns"></a>Example III Mining network intrusion patterns</h5><h5 id="Example-IV-Mining-gene-data"><a href="#Example-IV-Mining-gene-data" class="headerlink" title="Example IV Mining gene data"></a>Example IV Mining gene data</h5><h5 id="Example-V-Mining-medical-data"><a href="#Example-V-Mining-medical-data" class="headerlink" title="Example V Mining medical data"></a>Example V Mining medical data</h5><p>computer-aided diagnosis;</p><h5 id="Example-VI-Mining-the-web"><a href="#Example-VI-Mining-the-web" class="headerlink" title="Example VI Mining the web"></a>Example VI Mining the web</h5><p>web structure, web content, web usage, web logs</p><p>interesting patterns, behavior identification</p><h5 id="Example-VII-Mining-financial-data"><a href="#Example-VII-Mining-financial-data" class="headerlink" title="Example VII Mining financial data"></a>Example VII Mining financial data</h5><p>fraud detection</p><p>stock trends discovery </p><h5 id="Example-VIII-Mining-software-data"><a href="#Example-VIII-Mining-software-data" class="headerlink" title="Example VIII Mining software data"></a>Example VIII Mining software data</h5><p>improve the software quality, productivity and user experience</p><p>automated debugging</p><h5 id="Example-IX-Mining-usage-data"><a href="#Example-IX-Mining-usage-data" class="headerlink" title="Example IX Mining usage data"></a>Example IX Mining usage data</h5><h5 id="Example-X-Mining-data-from-sensors"><a href="#Example-X-Mining-data-from-sensors" class="headerlink" title="Example X Mining data from sensors"></a>Example X Mining data from sensors</h5><p>技术要自主可控；</p><h5 id="Example-XI-Mining-data-of-arts"><a href="#Example-XI-Mining-data-of-arts" class="headerlink" title="Example XI Mining data of arts"></a>Example XI Mining data of arts</h5><h5 id="Example-XII-Audio-Generation"><a href="#Example-XII-Audio-Generation" class="headerlink" title="Example XII Audio Generation"></a>Example XII Audio Generation</h5><h5 id="Example-XIII-Image-Video-Editing"><a href="#Example-XIII-Image-Video-Editing" class="headerlink" title="Example XIII Image/Video Editing"></a>Example XIII Image/Video Editing</h5><p>more and more applications</p><p>对于不同的数据，性质不同，分析的技术不同；</p><p>Data mining is non-trivial process of identifying valid, novel, potentially useful, and ultimately understandable.</p><p>core: machine learning</p><h3 id="KDD-Knowledge-Discoverty-in-Data"><a href="#KDD-Knowledge-Discoverty-in-Data" class="headerlink" title="KDD: Knowledge Discoverty in Data"></a>KDD: Knowledge Discoverty in Data</h3><h3 id="What-kind-of-data-can-be-mined"><a href="#What-kind-of-data-can-be-mined" class="headerlink" title="What kind of data can be mined?"></a>What kind of data can be mined?</h3><p>(1) “Flat” data: table or data matrix</p><p><em>Attribute varible fields features</em></p><p>(2) Data warehouse: statistic option, data language (make decisions)</p><p>(3) Text data</p><p>(4) Multimedia data: image, audio, video</p><p>(5) Web date</p><p>(6) Social network data</p><p>(7) Temporal and spatial data</p><h3 id="How-to-categorize-data-mining-tasks"><a href="#How-to-categorize-data-mining-tasks" class="headerlink" title="How to categorize data mining tasks?"></a>How to categorize data mining tasks?</h3><p>(1) Descriptive mining tasks.</p><p>(2) Predictive mining tasks.</p><h3 id="4月22日"><a href="#4月22日" class="headerlink" title="4月22日"></a>4月22日</h3><p>关联规则表达了关联性，但并没有反应因果性；</p><p>研究分支：因果发现；</p><p><strong>第五章：预测</strong></p><p>（1）evaluate</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 计算机技术 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>CS精英挑战营（2020年寒假班）</title>
       <link href="/2020/02/02/CS%E7%B2%BE%E8%8B%B1%E6%8C%91%E6%88%98%E8%90%A5/"/>
       <url>/2020/02/02/CS%E7%B2%BE%E8%8B%B1%E6%8C%91%E6%88%98%E8%90%A5/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 计算机技术 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>机器学习导论</title>
-      <link href="/2020/02/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AF%BC%E8%AE%BA/"/>
-      <url>/2020/02/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AF%BC%E8%AE%BA/</url>
       
         <content type="html"><![CDATA[]]></content>
       
