@@ -122,8 +122,8 @@
                         
                             <div class="blank_box"></div>
                             <span class="meta">
-                                Words <span class="post-count">4.5k</span> and
-                                Reading Time <span class="post-count">19</span> Minutes
+                                Words <span class="post-count">5.2k</span> and
+                                Reading Time <span class="post-count">22</span> Minutes
                             </span>
                             <div class="blank_box"></div>
                             <!-- 不蒜子统计 start -->
@@ -448,6 +448,38 @@ f(n) = \frac{1}{n} +\frac{n-2}{n}f(n-1)</script><h4 id="236-二叉树的最近�
 <li>没有重复的连接。</li>
 <li>两台计算机不会通过多条线缆连接。</li>
 </ul>
+<h4 id="1038-从二叉搜索树到更大和树"><a href="#1038-从二叉搜索树到更大和树" class="headerlink" title="1038. 从二叉搜索树到更大和树"></a>1038. 从二叉搜索树到更大和树</h4><p>难度中等46收藏分享切换为英文关注反馈</p>
+<p>给出二叉 <strong>搜索</strong> 树的根节点，该二叉树的节点值各不相同，修改二叉树，使每个节点 <code>node</code> 的新值等于原树中大于或等于 <code>node.val</code> 的值之和。</p>
+<p>提醒一下，二叉搜索树满足下列约束条件：</p>
+<ul>
+<li>节点的左子树仅包含键 <strong>小于</strong> 节点键的节点。</li>
+<li>节点的右子树仅包含键 <strong>大于</strong> 节点键的节点。</li>
+<li>左右子树也必须是二叉搜索树。</li>
+</ul>
+<p><strong>示例：</strong></p>
+<p><strong><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/05/03/tree.png" alt="img"></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：[4,1,6,0,2,5,7,null,null,null,3,null,null,null,8]</span><br><span class="line">输出：[30,36,21,36,35,26,15,null,null,null,33,null,null,null,8]</span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ol>
+<li>树中的节点数介于 <code>1</code> 和 <code>100</code> 之间。</li>
+<li>每个节点的值介于 <code>0</code> 和 <code>100</code> 之间。</li>
+<li>给定的树为二叉搜索树。</li>
+</ol>
+<p><strong>解题思路</strong></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">二叉搜索树最重要的性质便是右侧的数值大于左侧，本题中替换的数值大小便是右侧的所有键值之和。</span><br><span class="line">采取左序遍历的方式，求出所有元素之和，再依次减去自身元素即可；</span><br></pre></td></tr></table></figure>
+<p><strong>参考代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span>&#123;</span></span><br><span class="line">  <span class="keyword">int</span> val;</span><br><span class="line">  TreeNode* left;</span><br><span class="line">  TreeNode* right;</span><br><span class="line">  TreeNode(<span class="keyword">int</span> x): val(x), left(<span class="literal">NULL</span>), right(<span class="literal">NULL</span>)&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">solution</span>:</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">   <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">   <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; qu;</span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">sum_num</span><span class="params">(TreeNode *root)</span></span>&#123;</span><br><span class="line">     <span class="keyword">if</span>(root)&#123;</span><br><span class="line">       sum_num(root-&gt;left);</span><br><span class="line">       sum += root-&gt;val;</span><br><span class="line">       qu.push(root-&gt;val);</span><br><span class="line">       sum_num(root-&gt;right);</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">insertval</span><span class="params">(TreeNode *root)</span></span>&#123;</span><br><span class="line">     <span class="keyword">if</span>(root)&#123;</span><br><span class="line">       insertval(root-&gt;left);</span><br><span class="line">       root-&gt;val = sum;</span><br><span class="line">       sum -= qu.front();</span><br><span class="line">       qu.pop();</span><br><span class="line">       insertval(root-&gt;right);</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function">TreeNode* <span class="title">bstToGst</span><span class="params">(TreeNode* root)</span></span>&#123;</span><br><span class="line">     sum_num(root);</span><br><span class="line">     insertval(root);</span><br><span class="line">     <span class="keyword">return</span> root;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="50-利用快速幂算法实现pow-x-n-函数"><a href="#50-利用快速幂算法实现pow-x-n-函数" class="headerlink" title="50.利用快速幂算法实现pow(x,n)函数"></a>50.利用快速幂算法实现pow(x,n)函数</h4><p>基本思路，采用递归的想法，将$x^n$看作$(x^{n/2})^2$即可（快速幂算法）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">FastPow</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1.0</span>;</span><br><span class="line">  <span class="keyword">double</span> half = FastPow(x, n/<span class="number">2</span>);</span><br><span class="line">  <span class="keyword">if</span>(n%<span class="number">2</span> == <span class="number">0</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> half*half;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> half*half*x;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">pow</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1.0</span>;</span><br><span class="line">  <span class="keyword">if</span>(n &lt; <span class="number">0</span>)&#123;</span><br><span class="line">    x = <span class="number">1</span>/x;</span><br><span class="line">    n = -n;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> FastPow(x,n);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="102-二叉树的层序遍历"><a href="#102-二叉树的层序遍历" class="headerlink" title="102. 二叉树的层序遍历"></a>102. 二叉树的层序遍历</h4><p>给你一个二叉树，请你返回其按 <strong>层序遍历</strong> 得到的节点值。 （即逐层地，从左到右访问所有节点）。</p>
+<p><strong>示例：</strong><br>二叉树：<code>[3,9,20,null,null,15,7]</code>,</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  3</span><br><span class="line"> &#x2F; \</span><br><span class="line">9  20</span><br><span class="line">  &#x2F;  \</span><br><span class="line"> 15   7</span><br></pre></td></tr></table></figure>
+<p>返回其层次遍历结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  [3],</span><br><span class="line">  [9,20],</span><br><span class="line">  [15,7]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p><strong>思路</strong></p>
+<p>对于层序遍历，最开始想到的便是借助队列使用宽度有限搜索的方法</p>
+<p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">solution</span>:</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">ans</span><span class="params">(TreeNode* root)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root == <span class="literal">NULL</span>) <span class="keyword">return</span>&#123;&#125;;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; ans;</span><br><span class="line">    <span class="built_in">queue</span>&lt;TreeNode*&gt; qu;</span><br><span class="line">    qu.push_back(root);</span><br><span class="line">    <span class="keyword">while</span>(!qu.empty())&#123;</span><br><span class="line">      <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; tmp;<span class="comment">//开启新的一层</span></span><br><span class="line">      <span class="keyword">int</span> n = qu.<span class="built_in">size</span>();<span class="comment">//现存的队列长度为该层的元素个数</span></span><br><span class="line">      <span class="keyword">while</span>(n&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        TreeNode* t = qu.front();</span><br><span class="line">        qu.pop();</span><br><span class="line">        tmp.push_back(t-&gt;val);</span><br><span class="line">        <span class="comment">//放入非空的结点</span></span><br><span class="line">        <span class="keyword">if</span>(t-&gt;left != <span class="literal">NULL</span>) qu.push(t-&gt;left);</span><br><span class="line">        <span class="keyword">if</span>(t-&gt;right != <span class="literal">NULL</span>) qu.push(t-&gt;right);</span><br><span class="line">        n--;</span><br><span class="line">      &#125;</span><br><span class="line">      ans.push_back(tmp);<span class="comment">//算好一层后放入一层</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;<span class="comment">//返回层序遍历结果</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
                 
                 <hr>
@@ -455,7 +487,7 @@ f(n) = \frac{1}{n} +\frac{n-2}{n}f(n-1)</script><h4 id="236-二叉树的最近�
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2020/04/07/算法导论学习/" data-toggle="tooltip" data-placement="top" title="算法导论学习">&larr; Previous Post</a>
+                        <a href="/2020/04/19/python玩转数据/" data-toggle="tooltip" data-placement="top" title="python玩转数据">&larr; Previous Post</a>
                     </li>
                     
                     
@@ -753,27 +785,11 @@ f(n) = \frac{1}{n} +\frac{n-2}{n}f(n-1)</script><h4 id="236-二叉树的最近�
         
 
         
-            <script type="text/javascript" src="/js/mouse-click.js" content='[&quot;🌱&quot;,&quot;just do it&quot;,&quot;🌾&quot;,&quot;🍀&quot;,&quot;don&#39;t give up&quot;,&quot;🍂&quot;,&quot;🌻&quot;,&quot;try it again&quot;,&quot;🍃&quot;,&quot;never say die&quot;,&quot;🌵&quot;,&quot;🌿&quot;,&quot;🌴&quot;]' color='[&quot;rgb(121,93,179)&quot; ,&quot;rgb(76,180,231)&quot; ,&quot;rgb(184,90,154)&quot; ,&quot;rgb(157,211,250)&quot; ,&quot;rgb(255,0,0)&quot; ,&quot;rgb(242,153,29)&quot; ,&quot;rgb(23,204,16)&quot; ,&quot;rgb(222,0,0)&quot; ,&quot;rgb(22,36,92)&quot; ,&quot;rgb(127,24,116)&quot; ,&quot;rgb(119,195,79)&quot; ,&quot;rgb(4,77,34)&quot; ,&quot;rgb(122,2,60)&quot;]'></script>
+            <script type="text/javascript" src="/js/mouse-click.js" content='[&#34;🌱&#34;,&#34;just do it&#34;,&#34;🌾&#34;,&#34;🍀&#34;,&#34;don&#39;t give up&#34;,&#34;🍂&#34;,&#34;🌻&#34;,&#34;try it again&#34;,&#34;🍃&#34;,&#34;never say die&#34;,&#34;🌵&#34;,&#34;🌿&#34;,&#34;🌴&#34;]' color='[&#34;rgb(121,93,179)&#34; ,&#34;rgb(76,180,231)&#34; ,&#34;rgb(184,90,154)&#34; ,&#34;rgb(157,211,250)&#34; ,&#34;rgb(255,0,0)&#34; ,&#34;rgb(242,153,29)&#34; ,&#34;rgb(23,204,16)&#34; ,&#34;rgb(222,0,0)&#34; ,&#34;rgb(22,36,92)&#34; ,&#34;rgb(127,24,116)&#34; ,&#34;rgb(119,195,79)&#34; ,&#34;rgb(4,77,34)&#34; ,&#34;rgb(122,2,60)&#34;]'></script>
         
 
         <!-- background effects end -->
     
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 
