@@ -16,11 +16,11 @@
     <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
     <title>
         
-          数据结构与算法分析学习笔记 - Felix Zhang
+          Hierholzer算法 - Felix Zhang
         
     </title>
 
-    <link rel="canonical" href="https://dusign.net/2020/04/30/数据结构与算法分析学习笔记/">
+    <link rel="canonical" href="https://dusign.net/2020/05/13/Hierholzer算法/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -109,19 +109,21 @@
                     <div class="post-heading">
                         <div class="tags">
                             
+                              <a class="tag" href="/tags/#每天学点新算法" title="每天学点新算法">每天学点新算法</a>
+                            
                         </div>
-                        <h1>数据结构与算法分析学习笔记</h1>
+                        <h1>Hierholzer算法</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by Felix Zhang on
-                            2020-04-30
+                            2020-05-13
                         </span>
 
                         
                             <div class="blank_box"></div>
                             <span class="meta">
-                                Words <span class="post-count">497</span> and
-                                Reading Time <span class="post-count">2</span> Minutes
+                                Words <span class="post-count">940</span> and
+                                Reading Time <span class="post-count">3</span> Minutes
                             </span>
                             <div class="blank_box"></div>
                             <!-- 不蒜子统计 start -->
@@ -260,25 +262,49 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h3 id="（1）选择排序-Theta-n-2"><a href="#（1）选择排序-Theta-n-2" class="headerlink" title="（1）选择排序$\Theta(n^2)$"></a>（1）选择排序$\Theta(n^2)$</h3><h3 id="（2）归并排序-Theta-n-lg-n"><a href="#（2）归并排序-Theta-n-lg-n" class="headerlink" title="（2）归并排序$\Theta(n\lg n)$"></a>（2）归并排序$\Theta(n\lg n)$</h3><h3 id="（3）求解递归复杂度：特征方程、主定理"><a href="#（3）求解递归复杂度：特征方程、主定理" class="headerlink" title="（3）求解递归复杂度：特征方程、主定理"></a>（3）求解递归复杂度：特征方程、主定理</h3><h3 id="第四章：分治策略"><a href="#第四章：分治策略" class="headerlink" title="第四章：分治策略"></a>第四章：分治策略</h3><p>求解方法：代入法、递归树法、主定理</p>
-<h4 id="4-1-最大子数组问题：寻找数组A的连续和最大的子数组"><a href="#4-1-最大子数组问题：寻找数组A的连续和最大的子数组" class="headerlink" title="4.1 最大子数组问题：寻找数组A的连续和最大的子数组"></a>4.1 最大子数组问题：寻找数组A的连续和最大的子数组</h4><p>原始问题：最大化股票收益</p>
-<p>将原始问题依照中间点分为两段，最大子数组一定属于三种情况之一：完全左侧、完全右侧、跨越中心；</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//顺带锻炼一下结构体的基本操作</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INFTY -10000000;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//定义一个结构体</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">state</span>&#123;</span></span><br><span class="line">  <span class="keyword">int</span> left;</span><br><span class="line">  <span class="keyword">int</span> right;</span><br><span class="line">  <span class="keyword">int</span> sum;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//针对经过中点的的最长子数组</span></span><br><span class="line"><span class="function">state <span class="title">Maxsoncrossarray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> mid)</span></span>&#123;</span><br><span class="line">    state ans;</span><br><span class="line">    <span class="keyword">int</span> max_left, max_right, left_sum, right_sum, sum;</span><br><span class="line">    left_sum = INFTY;</span><br><span class="line">    sum = <span class="number">0</span>;</span><br><span class="line">    max_left = mid;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = mid; i &gt;= l; i--)&#123;</span><br><span class="line">        sum += A[i];</span><br><span class="line">        <span class="keyword">if</span>(sum &gt;= left_sum)&#123;</span><br><span class="line">            left_sum = sum;</span><br><span class="line">            max_left = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    max_right = mid + <span class="number">1</span>;</span><br><span class="line">    right_sum = INFTY;</span><br><span class="line">    sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = mid+<span class="number">1</span>; i &lt;= r; ++i)&#123;</span><br><span class="line">        sum += A[i];</span><br><span class="line">        <span class="keyword">if</span>(sum &gt;= right_sum)&#123;</span><br><span class="line">            right_sum = sum;</span><br><span class="line">            max_right = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ans.left = max_left;</span><br><span class="line">    ans.right = max_right;</span><br><span class="line">    ans.sum = left_sum + right_sum;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">state <span class="title">Maxsonarray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    state ans, tmp1, tmp2, tmp3;</span><br><span class="line">    <span class="comment">//特殊情况，若只有一个元素</span></span><br><span class="line">    <span class="keyword">if</span>(l == r)&#123;</span><br><span class="line">        ans.left = l;</span><br><span class="line">        ans.right = r;</span><br><span class="line">        ans.sum = A[l];</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">        </span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">int</span> mid = (l + r)/<span class="number">2</span>;</span><br><span class="line">        tmp1 = Maxsonarray(A, l, mid);</span><br><span class="line">        tmp2 = Maxsonarray(A, mid+<span class="number">1</span>, r);</span><br><span class="line">        tmp3 = Maxsoncrossarray(A, l, r, mid);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(tmp1.sum &gt;= tmp2.sum &amp;&amp; tmp1.sum &gt; tmp3.sum) <span class="keyword">return</span> tmp1;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(tmp2.sum &gt;= tmp1.sum &amp;&amp; tmp2.sum &gt; tmp3.sum) <span class="keyword">return</span> tmp2;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> tmp3;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; A;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)&#123;</span><br><span class="line">        <span class="keyword">int</span> tmp;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;tmp);</span><br><span class="line">        A.push_back(tmp);</span><br><span class="line">    &#125;</span><br><span class="line">    state ans = Maxsonarray(A, <span class="number">0</span>, n - <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n%d\n%d"</span>, ans.left, ans.right, ans.sum);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>补充说明：</strong>还有一种很简单的方法，动态规划，状态转换方程表示如下；</p>
-<script type="math/tex; mode=display">
-dp[i] = \max(dp[i-1]+nums[i], nums[i]);</script><h4 id="4-2-矩阵乘法的Strassen算法"><a href="#4-2-矩阵乘法的Strassen算法" class="headerlink" title="4.2 矩阵乘法的Strassen算法"></a>4.2 矩阵乘法的Strassen算法</h4>
+                <h1 id="Hierholzer算法的应用"><a href="#Hierholzer算法的应用" class="headerlink" title="Hierholzer算法的应用"></a>Hierholzer算法的应用</h1><h4 id="Hierholzer算法的基本过程"><a href="#Hierholzer算法的基本过程" class="headerlink" title="Hierholzer算法的基本过程"></a>Hierholzer算法的基本过程</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(1) 选择任一顶点为起点，遍历所有相邻边。</span><br><span class="line">(2) 深度搜索，访问相邻顶点。将经过的边都删除。</span><br><span class="line">(3) 如果当前顶点没有相邻边，则将顶点入栈。</span><br><span class="line">(4) 栈中的顶点倒序输出，就是从起点出发的欧拉回路。</span><br></pre></td></tr></table></figure>
+<p><strong>性质一</strong>：如果该图为欧拉图，则栈底的必定为起点。如果该图为半欧拉图，则栈底部存储的是与起点不同的另外一个奇度数顶点。</p>
+<p><strong>性质二</strong>：如果该图为欧拉图(/半欧拉图)，则栈中的自底到顶第$n$个顶点就是欧拉回路(/欧拉路径)上的第$n$个顶点。</p>
+<h4 id="问题一：LeetCode-332-重新安排行程"><a href="#问题一：LeetCode-332-重新安排行程" class="headerlink" title="问题一：LeetCode-332 重新安排行程"></a>问题一：LeetCode-332 重新安排行程</h4><p>给定一个机票的字符串二维数组 <code>[from, to]</code>，子数组中的两个成员分别表示飞机出发和降落的机场地点，对该行程进行重新规划排序。所有这些机票都属于一个从JFK（肯尼迪国际机场）出发的先生，所以该行程必须从 JFK 出发。</p>
+<p><strong>说明:</strong></p>
+<ol>
+<li>如果存在多种有效的行程，你可以按字符自然排序返回最小的行程组合。例如，行程 [“JFK”, “LGA”] 与 [“JFK”, “LGB”] 相比就更小，排序更靠前</li>
+<li>所有的机场都用三个大写字母表示（机场代码）。</li>
+<li>假定所有机票至少存在一种合理的行程。</li>
+</ol>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [[&quot;MUC&quot;, &quot;LHR&quot;], [&quot;JFK&quot;, &quot;MUC&quot;], [&quot;SFO&quot;, &quot;SJC&quot;], [&quot;LHR&quot;, &quot;SFO&quot;]]</span><br><span class="line">输出: [&quot;JFK&quot;, &quot;MUC&quot;, &quot;LHR&quot;, &quot;SFO&quot;, &quot;SJC&quot;]</span><br></pre></td></tr></table></figure>
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: [[&quot;JFK&quot;,&quot;SFO&quot;],[&quot;JFK&quot;,&quot;ATL&quot;],[&quot;SFO&quot;,&quot;ATL&quot;],[&quot;ATL&quot;,&quot;JFK&quot;],[&quot;ATL&quot;,&quot;SFO&quot;]]</span><br><span class="line">输出: [&quot;JFK&quot;,&quot;ATL&quot;,&quot;JFK&quot;,&quot;SFO&quot;,&quot;ATL&quot;,&quot;SFO&quot;]</span><br><span class="line">解释: 另一种有效的行程是 [&quot;JFK&quot;,&quot;SFO&quot;,&quot;ATL&quot;,&quot;JFK&quot;,&quot;ATL&quot;,&quot;SFO&quot;]。但是它自然排序更大更靠后。</span><br></pre></td></tr></table></figure>
+<p><strong>代码实现与注释</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//声明全局变量</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; ans;</span><br><span class="line"><span class="built_in">unordered_map</span>&lt;<span class="built_in">string</span>, <span class="built_in">map</span>&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt;&gt; adjGraph;<span class="comment">//构造邻接图，类似情况均可采用此数据结构</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&gt; tickets;<span class="comment">//边的存在情况</span></span><br><span class="line"><span class="comment">//深度优先遍历</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="built_in">string</span> from)</span></span>&#123;</span><br><span class="line">  <span class="comment">//遍历起点的所有边</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">auto</span>&amp; [to,num]: adjGraph[from])&#123;</span><br><span class="line">    <span class="keyword">if</span>(num &lt;= <span class="number">0</span>) <span class="keyword">continue</span>;<span class="comment">//此时边不存在</span></span><br><span class="line">    num--;</span><br><span class="line">    dfs(to);<span class="comment">//深度搜索下个顶点的所有边</span></span><br><span class="line">  &#125;</span><br><span class="line">  ans.push_back(from);<span class="comment">//最后才确定这条边是否可用</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//主函数</span></span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; <span class="title">FindInternart</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&gt;&amp; _tickets)</span></span>&#123;</span><br><span class="line">  tickets = _tickets;</span><br><span class="line">  <span class="comment">//构造邻接图</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">auto</span>&amp; ticket: tickets)&#123;</span><br><span class="line">    adjGraph[ticket[<span class="number">0</span>]][ticket[<span class="number">1</span>]]++;</span><br><span class="line">  &#125;</span><br><span class="line">  dfs(<span class="string">"JFK"</span>);</span><br><span class="line">  <span class="comment">//根据算法本质，是逆向推断，故需在最后反向处理</span></span><br><span class="line">  reverse(ans.<span class="built_in">begin</span>(), ans.<span class="built_in">end</span>());</span><br><span class="line">  <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="问题二：LeetCode-753-破解保险箱"><a href="#问题二：LeetCode-753-破解保险箱" class="headerlink" title="问题二：LeetCode-753 破解保险箱"></a>问题二：LeetCode-753 破解保险箱</h4><p>有一个需要密码才能打开的保险箱。密码是 <code>n</code> 位数, 密码的每一位是 <code>k</code> 位序列 <code>0, 1, ..., k-1</code> 中的一个 。</p>
+<p>你可以随意输入密码，保险箱会自动记住最后 <code>n</code> 位输入，如果匹配，则能够打开保险箱。</p>
+<p>举个例子，假设密码是 <code>&quot;345&quot;</code>，你可以输入 <code>&quot;012345&quot;</code> 来打开它，只是你输入了 6 个字符.</p>
+<p>请返回一个能打开保险箱的最短字符串。</p>
+<p><strong>示例1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: n &#x3D; 1, k &#x3D; 2</span><br><span class="line">输出: &quot;01&quot;</span><br><span class="line">说明: &quot;10&quot;也可以打开保险箱。</span><br></pre></td></tr></table></figure>
+<p><strong>示例2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: n &#x3D; 2, k &#x3D; 2</span><br><span class="line">输出: &quot;00110&quot;</span><br><span class="line">说明: &quot;01100&quot;, &quot;10011&quot;, &quot;11001&quot; 也能打开保险箱。</span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ol>
+<li><code>n</code> 的范围是 <code>[1, 4]</code>。</li>
+<li><code>k</code> 的范围是 <code>[1, 10]</code>。</li>
+<li><code>k^n</code> 最大可能为 <code>4096</code>。</li>
+</ol>
+
                 
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2020/05/04/力扣刷题日记/" data-toggle="tooltip" data-placement="top" title="力扣刷题日记">&larr; Previous Post</a>
+                        <a href="/2020/05/14/字符串相乘/" data-toggle="tooltip" data-placement="top" title="字符串相乘">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2020/04/30/C-学习笔记/" data-toggle="tooltip" data-placement="top" title="C++学习笔记">Next Post &rarr;</a>
+                        <a href="/2020/05/04/力扣刷题日记/" data-toggle="tooltip" data-placement="top" title="力扣刷题日记">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -334,6 +360,8 @@ dp[i] = \max(dp[i-1]+nums[i], nums[i]);</script><h4 id="4-2-矩阵乘法的Stras
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
+                          <a class="tag" href="/tags/#每天学点新算法" title="每天学点新算法">每天学点新算法</a>
+                        
                     </div>
                 </section>
                 

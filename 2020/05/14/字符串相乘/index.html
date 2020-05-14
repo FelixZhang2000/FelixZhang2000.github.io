@@ -16,11 +16,11 @@
     <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
     <title>
         
-          About - Felix Zhang
+          字符串相乘 - Felix Zhang
         
     </title>
 
-    <link rel="canonical" href="https://dusign.net/about/">
+    <link rel="canonical" href="https://dusign.net/2020/05/14/字符串相乘/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -87,8 +87,8 @@
     header.intro-header{
         
             
-                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/img/header_img/Iron-Man-3.jpg')
-                /*page*/
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('')
+                /*post*/
             
         
     }
@@ -106,10 +106,33 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 
-                    <div class="site-heading">
-                        <h1>About</h1>
-                        <!--<hr class="small">-->
-                        <span id="subdusi" class="subheading">When you get up early and work hard, when you stay up late, when you feel too tired to stand up again, but still support the night when you get up, that is the power of dreams.</span>
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#每日学点新算法" title="每日学点新算法">每日学点新算法</a>
+                            
+                        </div>
+                        <h1>字符串相乘</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by Felix Zhang on
+                            2020-05-14
+                        </span>
+
+                        
+                            <div class="blank_box"></div>
+                            <span class="meta">
+                                Words <span class="post-count">436</span> and
+                                Reading Time <span class="post-count">1</span> Minutes
+                            </span>
+                            <div class="blank_box"></div>
+                            <!-- 不蒜子统计 start -->
+                            <span class="meta">
+                                Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+                            </span>
+                            <!-- 不蒜子统计 end -->
+                        
+
                     </div>
                 
 
@@ -228,216 +251,159 @@
 
 
     <!-- Main Content -->
-    <!-- Main Content -->
-<div class="container">
-    <div class="row">
-        
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
-    <!-- Post Container -->
+            <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-                <blockquote>
-<p>The scenery we often see is that a person always looks up and envy the happiness of others, but finds that he is being looked up and envious. In fact, everyone is happy, but your happiness is often in the eyes of others.<br>&nbsp;<br>Life is a one-way trip. Even if there are some regrets, we have no chance to start all over again. It is better to smile and cherish the future than to confuse the past, because life is not as if.<br>&nbsp;<br>Don’t think too much, just do it now.</p>
-</blockquote>
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
 
+                <h1 id="字符串相乘（竖式模拟）"><a href="#字符串相乘（竖式模拟）" class="headerlink" title="字符串相乘（竖式模拟）"></a>字符串相乘（竖式模拟）</h1><p>给定两个以字符串形式表示的非负整数 num1 和 num2，返回 num1 和 num2 的乘积，它们的乘积也表示为字符串形式。</p>
+<p><strong>示例 1:</strong></p>
+<p>输入: num1 = “2”, num2 = “3”<br>输出: “6”<br><strong>示例 2:</strong></p>
+<p>输入: num1 = “123”, num2 = “456”<br>输出: “56088”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">num1 和 num2 的长度小于110。</span><br><span class="line">num1 和 num2 只包含数字 0-9。</span><br><span class="line">num1 和 num2 均不以零开头，除非是数字 0 本身。</span><br><span class="line">不能使用任何标准库的大数类型（比如 BigInteger）或直接将输入转换为整数来处理。</span><br></pre></td></tr></table></figure>
+<p><strong>算法思想</strong></p>
+<p>从小学的竖式计算中获得启发，从最低位开始计算。</p>
+<p>最开始不考虑进位，最后统一进行进位。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">multiply</span><span class="params">(<span class="built_in">string</span> num1, <span class="built_in">string</span> num2)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(num1 == <span class="string">'0'</span> || num2 == <span class="string">'0'</span>) <span class="keyword">return</span> <span class="string">"0"</span>;</span><br><span class="line">  <span class="keyword">int</span> n1 = num1.<span class="built_in">size</span>(), n2 = num2.<span class="built_in">size</span>();</span><br><span class="line">  <span class="comment">//字符串翻转方便处理</span></span><br><span class="line">  reverse(num1.<span class="built_in">begin</span>, num1.<span class="built_in">end</span>());</span><br><span class="line">  reverse(num2.<span class="built_in">begin</span>, num2.<span class="built_in">end</span>());</span><br><span class="line">  <span class="comment">//定义数组存储所有的相乘结果，暂时不进位</span></span><br><span class="line">  <span class="keyword">int</span> ans[<span class="number">225</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n1; ++i)&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n2; ++i)&#123;</span><br><span class="line">      ans[i+j] += (num1[i] - <span class="string">'0'</span>)*(num2[i] - <span class="string">'0'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//进位处理</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n1+n2; ++i)&#123;</span><br><span class="line">    <span class="keyword">if</span>(ans[i] &gt; <span class="number">9</span>)&#123;</span><br><span class="line">      <span class="keyword">int</span> tmp = ans[i]%<span class="number">9</span>;</span><br><span class="line">      ans[i+<span class="number">1</span>] += ans[i]/<span class="number">10</span>;</span><br><span class="line">      ans[i] = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//从头开始判断。由于位数较高的结果应该排在前方，故从后向前进行。</span></span><br><span class="line">  <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">  <span class="built_in">string</span> output = <span class="string">""</span>;</span><br><span class="line">  <span class="keyword">while</span>(ans[i] == <span class="number">0</span>)&#123;</span><br><span class="line">    i--;</span><br><span class="line">  &#125;<span class="comment">//只有0这种情况才会导致首位为0，其余情况下不为0的位置即为首位，可以开始进行处理</span></span><br><span class="line">  <span class="keyword">while</span>(i &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">    output += to_string(ans[i]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>小结</strong></p>
+<p>在遇到计算机无法直接处理的大数时，一般需要联想到人工的做法进行模拟；</p>
+
+                
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2020/05/13/Hierholzer算法/" data-toggle="tooltip" data-placement="top" title="Hierholzer算法">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                <!-- tip start -->
+                
+
+                
+                <div class="comment_notes">
+                    <p>
+                        This is copyright.
+                    </p>
+                </div>
+                
+                <!-- tip end -->
+
+                <!-- Sharing -->
+                
+                <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                <!--  css & js -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!-- Sharing -->
+
+                <!-- gitment start -->
+                
+                <!-- gitment end -->
+
+                <!-- 来必力City版安装代码 -->
+                
+                <!-- City版安装代码已完成 -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
             </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
 
+                
             <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        
-<!--
-<h5>SEARCH</h5>
-<div class="search-article" class="tags">
-	<input id="search-kw" type="text" name="search_article" placeholder="Enter keywords for search" />
-	<div class="search-img">
-		<img 
-			src="/img/search.png" 
-			alt="search" 
-			onMouseOver="this.src='/img/search-focus.png'" 
-			onMouseOut="this.src='/img/search.png'"/>
-	</div>
-</div>-->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
-<h5>SEARCH</h5>
-<div id="site_search">
-	<div class="form-group">
-		<input type="text" id="local-search-input" name="q" results="0" placeholder="search" class="st-search-input st-default-search-input form-control"/>
-	</div>  
-	<div id="local-search-result"></div>
-</div>
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#每日学点新算法" title="每日学点新算法">每日学点新算法</a>
+                        
+                    </div>
+                </section>
+                
 
-        <hr>
-    
-        <!-- Featured Tags -->
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
 
-<section>
-    <!-- no hr -->
-    <h5><a href="/tags/">FEATURED TAGS</a></h5>
-    <div class="tags">
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
+                    
+                        <li><a href="#" target="_blank">Felix&#39;s Blog</a></li>
+                    
+                        <li><a href="#" target="_blank">Felix&#39;s Web</a></li>
+                    
+                        <li><a href="https://github.com/felixzhang2000" target="_blank">Felix&#39;s Github</a></li>
+                    
+                        <li><a href="#" target="_blank">Other</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
     </div>
-</section>
+</article>
 
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-    <h5><a href="/about/">ABOUT ME</a></h5>
-    <div class="short-about">
 
-        
-            <img id = "avatar_pic" src="/img/shiba.jpg" />
-        
 
-        
-            <p>Welcome to visit, I&#39;m Felix! I&#39;m interested in condensed physics and machine learning. Besides, I love boys more than girls!</p>
-        
 
-        <!-- SNS Link -->
-        <ul class="list-inline">
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
 
-            
-                <li>
-                    <a target="_blank"  href="https://github.com/felixzhang2000">
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </a>
-                </li>
-            
 
-            
+<style  type="text/css">
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
 
-            
-
-            
-                <li>
-                    <a target="_blank" href="https://www.zhihu.com/people/langmu-6">
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa  fa-stack-1x fa-inverse">知</i>
-                        </span>
-                    </a>
-                </li>
-            
-
-            
-
-            
-
-            
-
-        </ul>
-    </div>
-</section>
-        <hr>
-    
-        
-  <h5>VISITORS</h5>
-  <div class="widget">
-    <span>
-    	Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-	</span>
-	<br/>
-	<span>
-		<b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-	</span>
-  </div>
-
-        <hr>
-    
-        
-  <h5>RECENT POSTS</h5>
-  <div class="widget">
-    <ul>
-      
-        <li>
-          <a href="/2020/05/14/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E4%B9%98/">字符串相乘</a>
-        </li>
-      
-        <li>
-          <a href="/2020/05/13/Hierholzer%E7%AE%97%E6%B3%95/">Hierholzer算法</a>
-        </li>
-      
-        <li>
-          <a href="/2020/05/04/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B0/">力扣刷题日记</a>
-        </li>
-      
-        <li>
-          <a href="/2020/04/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">数据结构与算法分析学习笔记</a>
-        </li>
-      
-        <li>
-          <a href="/2020/04/30/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">C++学习笔记</a>
-        </li>
-      
-    </ul>
-  </div>
-
-        <hr>
-    
-        <!-- Friends Blog -->
-
-<h5>FRIENDS</h5>
-<ul class="list-inline">
-
-    
-        <li><a href="#" target="_blank">Felix&#39;s Blog</a></li>
-    
-        <li><a href="#" target="_blank">Felix&#39;s Web</a></li>
-    
-        <li><a href="https://github.com/felixzhang2000" target="_blank">Felix&#39;s Github</a></li>
-    
-        <li><a href="#" target="_blank">Other</a></li>
-    
-</ul>
-
-        <hr>
-    
-        
-    <h5>ARCHIVES</h5>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li></ul>
-    </div>
-
-        <hr>
-    
-        <!-- Categories -->
-
-        <hr>
-    
-</div>
-
-        
-    </div>
-</div>
 
 
     <!-- Footer -->
