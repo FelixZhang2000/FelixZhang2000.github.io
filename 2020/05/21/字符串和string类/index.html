@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="093lY4ziMu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="Felix&#39;s Blog">
+    <meta name="keyword"  content="computer science, physics">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
+    <title>
+        
+          字符串和string类 - Felix Zhang
+        
+    </title>
+
+    <link rel="canonical" href="https://dusign.net/2020/05/21/字符串和string类/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    
+        
+<link rel="stylesheet" href="/css/dusign-light.css">
+
+        
+<link rel="stylesheet" href="/css/dusign-common-light.css">
+
+        
+<link rel="stylesheet" href="/css/font-awesome.css">
+
+        
+<link rel="stylesheet" href="/css/toc.css">
+
+        <!-- background effects end -->
+    
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/fonts.googleapis.css">
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    
+        <!-- background effects start -->
+        
+        <!-- background effects end -->
+    
+
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('')
+                /*post*/
+            
+        
+    }
+    
+    #signature{
+        background-image: url('/img/signature/dusign.png');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#C++程序设计语言学习专题" title="C++程序设计语言学习专题">C++程序设计语言学习专题</a>
+                            
+                        </div>
+                        <h1>字符串和string类</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by Felix Zhang on
+                            2020-05-21
+                        </span>
+
+                        
+                            <div class="blank_box"></div>
+                            <span class="meta">
+                                Words <span class="post-count">1.2k</span> and
+                                Reading Time <span class="post-count">5</span> Minutes
+                            </span>
+                            <div class="blank_box"></div>
+                            <!-- 不蒜子统计 start -->
+                            <span class="meta">
+                                Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+                            </span>
+                            <!-- 不蒜子统计 end -->
+                        
+
+                    </div>
+                
+
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    
+    <div class="waveWrapper">
+        <div class="wave wave_before" style="background-image: url('/img/wave-light.png')"></div>
+        <div class="wave wave_after" style="background-image: url('/img/wave-light.png')"></div>
+    </div>
+    
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Felix Zhang</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/photography/">Photography</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                    <li>
+                        <a href="https://blog.csdn.net/d_Nail" target="_blank">Chinese Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1 id="字符串和string类"><a href="#字符串和string类" class="headerlink" title="字符串和string类"></a>字符串和string类</h1><h3 id="C风格字符串"><a href="#C风格字符串" class="headerlink" title="C风格字符串"></a><strong>C风格字符串</strong></h3><p>使用“ ”结尾的一维字符型数组，最终所需要的空间比字符串中字符个数多一个；</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//C++中的一些操作</span></span><br><span class="line"><span class="built_in">strcpy</span>(s1, s2);</span><br><span class="line"><span class="comment">//复制字符串s2到s1</span></span><br><span class="line"><span class="built_in">strcat</span>(s1, s2);</span><br><span class="line"><span class="comment">//连接字符串s2到s1的末尾</span></span><br><span class="line"><span class="built_in">strlen</span>(s1);</span><br><span class="line"><span class="comment">//返回字符串s1的长度</span></span><br><span class="line"><span class="built_in">strcmp</span>(s1, s2);</span><br><span class="line"><span class="comment">//比较两个字符串，若相同则返回0；如果s1大，则返回值大于0，否则小于0；</span></span><br><span class="line"><span class="built_in">strchr</span>(s1, ch);</span><br><span class="line"><span class="comment">//返回一个指针，指向s1中ch字符第一次出现的位置</span></span><br><span class="line"><span class="built_in">strstr</span>(s1, s2);</span><br><span class="line"><span class="comment">//返回一个指针，指向s1中s2第一次出现的位置</span></span><br></pre></td></tr></table></figure>
+<h3 id="C-标准库中的string类"><a href="#C-标准库中的string类" class="headerlink" title="C++标准库中的string类"></a><strong>C++标准库中的string类</strong></h3><p>优势：可以看作基本数据类型使用，操作较char型字符串更加方便</p>
+<h4 id="1-声明一个string类型变量"><a href="#1-声明一个string类型变量" class="headerlink" title="1.声明一个string类型变量"></a>1.声明一个string类型变量</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="built_in">string</span> ss[<span class="number">10</span>];<span class="comment">//声明一个string类型的数组</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-初始化"><a href="#2-初始化" class="headerlink" title="2.初始化"></a>2.初始化</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">string</span> s;<span class="comment">//默认初始化，一个空字符串</span></span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">s1</span><span class="params">(<span class="string">"ssss"</span>)</span></span>;<span class="comment">//s1是字面值“ssss”的副本</span></span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">s2</span><span class="params">(s1)</span></span>;<span class="comment">//s2是s1的副本</span></span><br><span class="line">    <span class="built_in">string</span> s3=s2;<span class="comment">//s3是s2的副本</span></span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">s4</span><span class="params">(<span class="number">10</span>,<span class="string">'c'</span>)</span></span>;<span class="comment">//把s4初始化</span></span><br><span class="line">    <span class="built_in">string</span> s5=<span class="string">"hiya"</span>;<span class="comment">//拷贝初始化</span></span><br><span class="line">    <span class="built_in">string</span> s6=<span class="built_in">string</span>(<span class="number">10</span>,<span class="string">'c'</span>);<span class="comment">//拷贝初始化，生成一个初始化好的对象，拷贝给s6</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//string s(cp,n)</span></span><br><span class="line">    <span class="keyword">char</span> cs[]=<span class="string">"12345"</span>;</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">s7</span><span class="params">(cs,<span class="number">3</span>)</span></span>;<span class="comment">//复制c风格字符串cs的前3个字符到s当中</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//string s(s2,pos2)</span></span><br><span class="line">    <span class="built_in">string</span> s8=<span class="string">"asac"</span>;</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">s9</span><span class="params">(s8,<span class="number">2</span>)</span></span>;<span class="comment">//从s2的第二个字符开始拷贝，不能超过s2的size</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//string s(s2,pos2,len2)</span></span><br><span class="line">    <span class="built_in">string</span> s10=<span class="string">"qweqweqweq"</span>;</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">s11</span><span class="params">(s10,<span class="number">3</span>,<span class="number">4</span>)</span></span>;<span class="comment">//s4是s3从下标3开始4个字符的拷贝，超过s3.size出现未定义</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-字符串的处理方法"><a href="#3-字符串的处理方法" class="headerlink" title="3.字符串的处理方法"></a>3.字符串的处理方法</h4><h5 id="substr"><a href="#substr" class="headerlink" title="substr"></a><strong>substr</strong></h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s.substr(pos, len);<span class="comment">//返回从pos开始往后长度为len的字符串</span></span><br><span class="line">s.substr(pos);<span class="comment">//从pos开始剩下的所有字符串</span></span><br></pre></td></tr></table></figure>
+<p>如输入的位置超过限制，则会报错</p>
+<h5 id="insert"><a href="#insert" class="headerlink" title="insert"></a><strong>insert</strong></h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">s.insert(pos, str);<span class="comment">//在pos位置放入一个字符串str</span></span><br><span class="line">s.insert(pos, str, a, n);<span class="comment">//在pos位置插入str中a位置往后n个字符</span></span><br><span class="line">s.insert(pos, cstr, n);<span class="comment">//在pos位置插入c风格字符串从开始到末尾的n个字符</span></span><br><span class="line">s.insert(pos, cstr);<span class="comment">//在pos位置插入cstr字符串</span></span><br><span class="line">s.insert(pos, n, ch);<span class="comment">//在pos位置上插入n个ch字符</span></span><br><span class="line">s.insert(s.it, ch);<span class="comment">//在s的it指向位置前面插入一个字符ch，返回新插入的位置的迭代器</span></span><br><span class="line">s.insert(s.it,n,ch);<span class="comment">//在s的it所指向位置的前面插入n个ch</span></span><br><span class="line">s.insert(it, str.ita, str.itb);<span class="comment">//在it所指向的位置的前面插入[ita,itb)的字符串</span></span><br></pre></td></tr></table></figure>
+<h5 id="erase"><a href="#erase" class="headerlink" title="erase"></a><strong>erase</strong></h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s.erase (<span class="number">10</span>,<span class="number">8</span>);<span class="comment">//直接指定删除的字符串位置第十个后面的8个字符</span></span><br><span class="line">s.erase (str.<span class="built_in">begin</span>()+<span class="number">9</span>);<span class="comment">//删除迭代器指向的字符</span></span><br><span class="line">str.erase (str.<span class="built_in">begin</span>()+<span class="number">5</span>, str.<span class="built_in">end</span>()<span class="number">-9</span>); <span class="comment">//删除迭代器范围内的字符</span></span><br></pre></td></tr></table></figure>
+<h5 id="append"><a href="#append" class="headerlink" title="append"></a><strong>append</strong></h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//直接追加一个str2的字符串</span></span><br><span class="line">str.append(str2);                       </span><br><span class="line"><span class="comment">//后面追加str3第6个字符开始的3个字符串</span></span><br><span class="line">str.append(str3,<span class="number">6</span>,<span class="number">3</span>);                   </span><br><span class="line"><span class="comment">//追加字符串形参的前5个字符</span></span><br><span class="line">str.append(<span class="string">"dots are cool"</span>,<span class="number">5</span>);          </span><br><span class="line"><span class="comment">//直接添加</span></span><br><span class="line">str.append(<span class="string">"here: "</span>);                   </span><br><span class="line"><span class="comment">//添加10个'.'</span></span><br><span class="line">str.append(<span class="number">10u</span>,<span class="string">'.'</span>);                    </span><br><span class="line"><span class="comment">//添加str3迭代器范围的字符串</span></span><br><span class="line">str.append(str3.begin()+<span class="number">8</span>,str3.end());  </span><br><span class="line"><span class="comment">//最后这个比较特殊，意思是添加5个'A'，实际上参数里面的65对应的asc码就是65</span></span><br><span class="line">str.append&lt;<span class="keyword">int</span>&gt;(<span class="number">5</span>,<span class="number">65</span>);                </span><br><span class="line"><span class="comment">//字符串追加也可以用重载运算符实现</span></span><br><span class="line">str+=<span class="string">"lalala"</span>;</span><br></pre></td></tr></table></figure>
+<h5 id="replace"><a href="#replace" class="headerlink" title="replace"></a>replace</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用下标</span></span><br><span class="line"><span class="comment">//第9个字符以及后面的4个字符被str2代替</span></span><br><span class="line">str.replace(<span class="number">9</span>,<span class="number">5</span>,str2);          <span class="comment">// "this is an example string." (1)</span></span><br><span class="line"><span class="comment">//第19个字符串以及后面的5个字符用str的第7个字符以及后面的5个字符代替</span></span><br><span class="line">str.replace(<span class="number">19</span>,<span class="number">6</span>,str3,<span class="number">7</span>,<span class="number">6</span>);     <span class="comment">// "this is an example phrase." (2)</span></span><br><span class="line"><span class="comment">//第8个字符以及后面的9个字符用字符串参数代替</span></span><br><span class="line">str.replace(<span class="number">8</span>,<span class="number">10</span>,<span class="string">"just a"</span>);     <span class="comment">// "this is just a phrase."     (3)</span></span><br><span class="line"><span class="comment">//第8个字符以及后面的5个字符用字符串参数的前7个字符替换</span></span><br><span class="line">str.replace(<span class="number">8</span>,<span class="number">6</span>,<span class="string">"a shorty"</span>,<span class="number">7</span>);  <span class="comment">// "this is a short phrase."    (4)</span></span><br><span class="line"><span class="comment">//第22以及后面的0个字符用3个叹号替换</span></span><br><span class="line">str.replace(<span class="number">22</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="string">'!'</span>);        <span class="comment">// "this is a short phrase!!!"  (5)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用迭代器                                             </span></span><br><span class="line">str.replace(str.<span class="built_in">begin</span>(),str.<span class="built_in">end</span>()<span class="number">-3</span>,str3);                    <span class="comment">// "sample phrase!!!"      (1)</span></span><br><span class="line">str.replace(str.<span class="built_in">begin</span>(),str.<span class="built_in">begin</span>()+<span class="number">6</span>,<span class="string">"replace"</span>);             <span class="comment">// "replace phrase!!!"     (3)</span></span><br><span class="line">str.replace(str.<span class="built_in">begin</span>()+<span class="number">8</span>,str.<span class="built_in">begin</span>()+<span class="number">14</span>,<span class="string">"is coolness"</span>,<span class="number">7</span>);    <span class="comment">// "replace is cool!!!"    (4)</span></span><br><span class="line">str.replace(str.<span class="built_in">begin</span>()+<span class="number">12</span>,str.<span class="built_in">end</span>()<span class="number">-4</span>,<span class="number">4</span>,<span class="string">'o'</span>);                <span class="comment">// "replace is cooool!!!"  (5)</span></span><br><span class="line">str.replace(str.<span class="built_in">begin</span>()+<span class="number">11</span>,str.<span class="built_in">end</span>(),str4.<span class="built_in">begin</span>(),str4.<span class="built_in">end</span>());<span class="comment">// "replace is useful."    (6)</span></span><br></pre></td></tr></table></figure>
+<h5 id="assign"><a href="#assign" class="headerlink" title="assign"></a>assign</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//直接把base赋值给str</span></span><br><span class="line">str.assign(base);</span><br><span class="line"><span class="comment">//把base第10个字符以及后面的8个字符赋给str</span></span><br><span class="line">str.assign(base,<span class="number">10</span>,<span class="number">9</span>);</span><br><span class="line"><span class="comment">//把参数中的0到6个字符串赋给str</span></span><br><span class="line">str.assign(<span class="string">"pangrams are cool"</span>,<span class="number">7</span>);</span><br><span class="line"><span class="comment">//直接使用参数赋值</span></span><br><span class="line">str.assign(<span class="string">"c-string"</span>);</span><br><span class="line"><span class="comment">//给str赋值10个'*'字符</span></span><br><span class="line">str.assign(<span class="number">10</span>,<span class="string">'*'</span>);</span><br><span class="line"><span class="comment">//赋值是10个'-'</span></span><br><span class="line">str.assign&lt;<span class="keyword">int</span>&gt;(<span class="number">10</span>,<span class="number">0x2D</span>);</span><br><span class="line"><span class="comment">//指定base迭代器范围的字符串</span></span><br><span class="line">str.assign(base.<span class="built_in">begin</span>()+<span class="number">16</span>,base.<span class="built_in">end</span>()<span class="number">-12</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="4-搜索操作"><a href="#4-搜索操作" class="headerlink" title="4.搜索操作"></a>4.搜索操作</h4><h5 id="find"><a href="#find" class="headerlink" title="find"></a>find</h5><h5 id="rfind"><a href="#rfind" class="headerlink" title="rfind"></a>rfind</h5><h5 id="find-…-of"><a href="#find-…-of" class="headerlink" title="find_…_of"></a>find_…_of</h5><h5 id="5-比较和转换"><a href="#5-比较和转换" class="headerlink" title="5.比较和转换"></a>5.比较和转换</h5>
+                
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2020/05/23/双指针/" data-toggle="tooltip" data-placement="top" title="双指针">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2020/05/21/最长回文字符串/" data-toggle="tooltip" data-placement="top" title="最长回文字符串">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                <!-- tip start -->
+                
+
+                
+                <div class="comment_notes">
+                    <p>
+                        This is copyright.
+                    </p>
+                </div>
+                
+                <!-- tip end -->
+
+                <!-- Sharing -->
+                
+                <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                <!--  css & js -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!-- Sharing -->
+
+                <!-- gitment start -->
+                
+                <!-- gitment end -->
+
+                <!-- 来必力City版安装代码 -->
+                
+                <!-- City版安装代码已完成 -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#C++程序设计语言学习专题" title="C++程序设计语言学习专题">C++程序设计语言学习专题</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="#" target="_blank">Felix&#39;s Blog</a></li>
+                    
+                        <li><a href="#" target="_blank">Felix&#39;s Web</a></li>
+                    
+                        <li><a href="https://github.com/felixzhang2000" target="_blank">Felix&#39;s Github</a></li>
+                    
+                        <li><a href="#" target="_blank">Other</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+
+
+<style  type="text/css">
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/felixzhang2000">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/langmu-6">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Felix Zhang 2020 
+                    <br>
+                    Powered by 
+                    <a href="https://github.com/dusign/hexo-theme-snail" target="_blank" rel="noopener">
+                        <i>hexo-theme-snail</i>
+                    </a> | 
+                    <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0"
+                        width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=dusign&repo=hexo-theme-snail&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- Search -->
+
+<script src="/js/search.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://dusign.net/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Search -->
+
+    <script type="text/javascript">      
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+    var path = "/" + search_path;
+    searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+
+
+<!-- busuanzi -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+
+    
+        <!-- background effects start -->
+        
+
+        
+            <script type="text/javascript" src="/js/mouse-click.js" content='[&quot;🌱&quot;,&quot;just do it&quot;,&quot;🌾&quot;,&quot;🍀&quot;,&quot;don&#39;t give up&quot;,&quot;🍂&quot;,&quot;🌻&quot;,&quot;try it again&quot;,&quot;🍃&quot;,&quot;never say die&quot;,&quot;🌵&quot;,&quot;🌿&quot;,&quot;🌴&quot;]' color='[&quot;rgb(121,93,179)&quot; ,&quot;rgb(76,180,231)&quot; ,&quot;rgb(184,90,154)&quot; ,&quot;rgb(157,211,250)&quot; ,&quot;rgb(255,0,0)&quot; ,&quot;rgb(242,153,29)&quot; ,&quot;rgb(23,204,16)&quot; ,&quot;rgb(222,0,0)&quot; ,&quot;rgb(22,36,92)&quot; ,&quot;rgb(127,24,116)&quot; ,&quot;rgb(119,195,79)&quot; ,&quot;rgb(4,77,34)&quot; ,&quot;rgb(122,2,60)&quot;]'></script>
+        
+
+        <!-- background effects end -->
+    
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+
+</html>

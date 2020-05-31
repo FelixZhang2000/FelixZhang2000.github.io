@@ -122,8 +122,8 @@
                         
                             <div class="blank_box"></div>
                             <span class="meta">
-                                Words <span class="post-count">441</span> and
-                                Reading Time <span class="post-count">1</span> Minutes
+                                Words <span class="post-count">717</span> and
+                                Reading Time <span class="post-count">3</span> Minutes
                             </span>
                             <div class="blank_box"></div>
                             <!-- 不蒜子统计 start -->
@@ -184,14 +184,14 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
@@ -262,7 +262,8 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1 id="前缀和及其优化"><a href="#前缀和及其优化" class="headerlink" title="前缀和及其优化"></a>前缀和及其优化</h1><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p><strong>560. 和为K的子数组</strong></p>
+                <h1 id="前缀和算法"><a href="#前缀和算法" class="headerlink" title="前缀和算法"></a>前缀和算法</h1><p>前缀和，取余，用hash表维护次数，方便统计；</p>
+<h3 id="题目描述560"><a href="#题目描述560" class="headerlink" title="题目描述560"></a>题目描述560</h3><p><strong>560. 和为K的子数组</strong></p>
 <p>给定一个整数数组和一个整数 <strong>k，</strong>你需要找到该数组中和为 <strong>k</strong> 的连续的子数组的个数。</p>
 <p><strong>示例 1 :</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入:nums &#x3D; [1,1,1], k &#x3D; 2</span><br><span class="line">输出: 2 , [1,1] 与 [1,1] 为两种不同的情况。</span><br></pre></td></tr></table></figure>
@@ -278,7 +279,20 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用前缀和计算的方法</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">subarraySum</span><span class="params">(Vector&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">  <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; hash;</span><br><span class="line">  hash[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">int</span> tmp = <span class="number">0</span>, cnt = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">auto</span> x: nums)&#123;</span><br><span class="line">    tmp += x;</span><br><span class="line">    <span class="keyword">if</span>(hash.<span class="built_in">find</span>(tmp - x) != hash.<span class="built_in">end</span>()) cnt += hash[tmp - x];<span class="comment">//a</span></span><br><span class="line">    hash[tmp]++;<span class="comment">//b</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> cnt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这道题最大的问题在于思路：将枚举的方法转换为遍历求和后求差值，并用hash表对次数进行管理；</p>
 <p>关于代码实现：实现对hash\vector等数据结构使用find函数时，若未查到，则会返回end()的值；</p>
-<p>深入思考，a和b两行代码能够对调？显然是不能的，考虑极端情况，k=0时若对调会导致得到的结果相对正确答案偏大，故无法对调。（计算机科很考边界条件啊！！！）</p>
+<p>深入思考，a和b两行代码能够对调？显然是不能的，考虑极端情况，k=0时若对调会导致得到的结果相对正确答案偏大，故无法对调。（计算机很考边界条件啊！！！）</p>
+<h3 id="题目描述974"><a href="#题目描述974" class="headerlink" title="题目描述974"></a>题目描述974</h3><p><strong>974.和可被 K 整除的子数组</strong></p>
+<p>给定一个整数数组 <code>A</code>，返回其中元素之和可被 <code>K</code> 整除的（连续、非空）子数组的数目。</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入：A &#x3D; [4,5,0,-2,-3,1], K &#x3D; 5</span><br><span class="line">输出：7</span><br><span class="line">解释：</span><br><span class="line">有 7 个子数组满足其元素之和可被 K &#x3D; 5 整除：</span><br><span class="line">[4, 5, 0, -2, -3, 1], [5], [5, 0], [5, 0, -2, -3], [0], [0, -2, -3], [-2, -3]</span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ol>
+<li><code>1 &lt;= A.length &lt;= 30000</code></li>
+<li><code>-10000 &lt;= A[i] &lt;= 10000</code></li>
+<li><code>2 &lt;= K &lt;= 10000</code></li>
+</ol>
+<h3 id="解答思路-1"><a href="#解答思路-1" class="headerlink" title="解答思路"></a>解答思路</h3><p>使用前缀和算法，考虑每个位置sum的余数，余数为0自然可以整除，除此外，对于前方余数相同的指标个数，即可表示为子数组数；</p>
+<p>注意，针对负数的取余具有特殊性；</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">subarrayDivByk</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A, <span class="keyword">int</span> K)</span></span>&#123;</span><br><span class="line">  <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; cnt;<span class="comment">//用hash表管理余数出现的次数</span></span><br><span class="line">  <span class="keyword">int</span> ans = <span class="number">0</span>, sum = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A.<span class="built_in">size</span>(); ++i)&#123;</span><br><span class="line">    sum += A[i];</span><br><span class="line">    <span class="keyword">int</span> tmp = (sum%K + K)%K;</span><br><span class="line">    <span class="keyword">if</span>(tmp == <span class="number">0</span>) ans++;</span><br><span class="line">    ans += cnt[tmp];</span><br><span class="line">    cnt[tmp]++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
                 
                 <hr>
