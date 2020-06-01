@@ -4,6 +4,63 @@
   
     
     <entry>
+      <title>6月2日计划</title>
+      <link href="/2020/06/01/6%E6%9C%882%E6%97%A5%E8%AE%A1%E5%88%92/"/>
+      <url>/2020/06/01/6%E6%9C%882%E6%97%A5%E8%AE%A1%E5%88%92/</url>
+      
+        <content type="html"><![CDATA[<h3 id="第一段"><a href="#第一段" class="headerlink" title="第一段"></a>第一段</h3><p>面向对象程序设计</p><h3 id="第二段"><a href="#第二段" class="headerlink" title="第二段"></a>第二段</h3><p>机器学习导论</p><h3 id="第三段"><a href="#第三段" class="headerlink" title="第三段"></a>第三段</h3><p>机器学习导论</p><h3 id="第四段"><a href="#第四段" class="headerlink" title="第四段"></a>第四段</h3><p>大学化学</p><h3 id="第五段"><a href="#第五段" class="headerlink" title="第五段"></a>第五段</h3><p>Leetcode刷题与算法</p><h3 id="第六段"><a href="#第六段" class="headerlink" title="第六段"></a>第六段</h3><p>量子信息笔记整理</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计划 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>机器学习笔记（三）</title>
+      <link href="/2020/06/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/"/>
+      <url>/2020/06/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h1 id="第三章-线性模型"><a href="#第三章-线性模型" class="headerlink" title="第三章 线性模型"></a>第三章 线性模型</h1><h3 id="3-4-线性判别分析"><a href="#3-4-线性判别分析" class="headerlink" title="3.4 线性判别分析"></a>3.4 线性判别分析</h3><h3 id="3-5-多分类学习"><a href="#3-5-多分类学习" class="headerlink" title="3.5 多分类学习"></a>3.5 多分类学习</h3><h3 id="3-6-类别不平衡问题"><a href="#3-6-类别不平衡问题" class="headerlink" title="3.6 类别不平衡问题"></a>3.6 类别不平衡问题</h3><h3 id="Python实现说明"><a href="#Python实现说明" class="headerlink" title="Python实现说明"></a>Python实现说明</h3>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 机器学习笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>机器学习笔记（二）线性模型</title>
+      <link href="/2020/06/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/"/>
+      <url>/2020/06/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/</url>
+      
+        <content type="html"><![CDATA[<h1 id="第二章-模型评估与选择"><a href="#第二章-模型评估与选择" class="headerlink" title="第二章  模型评估与选择"></a>第二章  模型评估与选择</h1><h3 id="2-4-比较检验"><a href="#2-4-比较检验" class="headerlink" title="2.4 比较检验"></a>2.4 比较检验</h3><p><strong>统计假设检验（hypothesis test）</strong>：基于假设检验的结果我们可以推断出，若在测试集上观察到学习器A比B好，则A的泛化性能是否在统计意义上优于B，以及上述结论成立的把握有多大。</p><p><strong>2.4.1 假设检验</strong></p><p>在包含m个样本的测试集上，泛化错误率$\epsilon$的学习器被测得测试错误率$\hat{\epsilon}$的概率：</p><script type="math/tex; mode=display">P(\hat{\epsilon};\epsilon) = \tbinom{m}{\hat{\epsilon}\times m}\epsilon^{\hat{\epsilon}\times m}(1-\epsilon)^{m-\hat{\epsilon}\times m}</script><p>做极大似然估计，$\part P(\hat{\epsilon};\epsilon)/\part \hat{\epsilon}=0$时，$\hat{\epsilon}=\epsilon$，即可以用测试错误率进行泛化错误率的估计；</p><p>考虑假设$\epsilon&lt; \epsilon_0$在置信度（confidence）$1-\alpha$时的临界值的估计：</p><script type="math/tex; mode=display">\overline{\epsilon} = \max \epsilon \\\sum_{i=\epsilon_0\times m + 1}^{m}\tbinom{m}{i}\epsilon^i(1-\epsilon)^{m-i} < \alpha</script><p><strong>故若测试错误率$\hat{\epsilon}&lt;\epsilon$，则根据二项检验可以得出结论：在$\alpha$的显著度下，假设$\epsilon &lt; \epsilon_0$不能被拒绝；否则该假设可以被拒绝；</strong></p><p>但事实上我们会进行多次留出法，得到多个测试错误率，则可以使用<strong>t检验</strong>：</p><script type="math/tex; mode=display">平均测试错误率：\mu=\frac{1}{k}\sum_{i=1}^{k}\hat{\epsilon_i}\\方差：\sigma^2 = \frac{1}{k-1}\sum_{i=1}^{k}(\hat{\epsilon_i}-\mu)^2</script><p>上述$k$个错误率可以看作是泛化错误率的独立采样，则变量</p><script type="math/tex; mode=display">\tau_t=\frac{\sqrt{k}(\mu - \epsilon_0)}{\sigma}</script><p>服从自由度为$k-1$的$t$分布；$t_{-\alpha}$表示从最左往右面积为$\alpha$时$t$的取值；</p><p><strong>若平均错误率$\mu$和$\epsilon<em>0$之差$|\mu-\epsilon_0|$位于临界值范围$[t</em>{-\alpha/2},t_{\alpha/2}]$内，则不能拒绝假设$\mu = \epsilon_0$</strong></p><p><strong>2.4.2 交叉验证t检验</strong></p><p>基本思想：若两个学习器的性能相同，则它们使用相同的训练/测试集得到的测试错误率应该相同；</p><p>（1）根据二者测试错误率的差值对假设“学习器A和B性能相同”作$t$检验，计算出$\mu$和$\sigma^2$，在显著度$\alpha$下，若变量：</p><script type="math/tex; mode=display">\tau_t=|\frac{\sqrt{k}\mu}{\sigma}|</script><p>小于临界值$t_{\alpha/2,k-1}$，则假设无法被拒绝，认为两个学习器性能没有差别；否则认为二者学习性能有差别；</p><p><strong>测试错误率时泛化错误率的独立采样！！！</strong></p><p>（2）受限于数据集大小，测试错误率采样并非完全独立，可使用<strong>$5\times 2$交叉验证法</strong>解决上述问题：</p><p>做5次2折交叉验证，在每次2折交叉验证前随机打乱数据，从而使得数据的划分不重复；</p><p>仅计算第一次2折交叉验证的平均值:</p><script type="math/tex; mode=display">\mu = 0.5(\Delta_1^1+\Delta_2^1)</script><p>但需要使用所有2折实验的结果计算得到方差</p><script type="math/tex; mode=display">\sigma_i^2=(\Delta_i^1-\frac{\Delta_i^1+\Delta_i^2}{2})^2+(\Delta_i^2-\frac{\Delta_i^1+\Delta_i^2}{2})^2</script><p>从而构造变量</p><script type="math/tex; mode=display">\tau_t=\frac{\mu}{\sqrt{0.2\sum_{i=1}^{5}\sigma_i^2}}</script><p>上述变量服从自由度为5的t分布，其双边检验临界值为$t_{\alpha/2,5}$。</p><p><strong>2.4.3 McNemar检验</strong></p><p>对两分类器问题，考虑给出的样本结果数，给出列联表；</p><p>假设两个学习器性能相同，则应该有$e<em>{01}=e</em>{10}$，则变量$|e<em>{01}-e</em>{10}|$应该服从正态分布，考虑检验变量</p><script type="math/tex; mode=display">\tau_{\chi^2}=\frac{(|e_{10}-e_{01}|-1)^2}{e_{01}+e_{10}}</script><p>服从自由度为1的$\chi^2$分布。给定显著度$\alpha$，当以上变量小于临界值$\chi_\alpha^2$时，不能拒绝假设；否则拒绝假设；</p><p><strong>2.4.4 Friedman检验与Nemenyi检验</strong></p><p>（1）基于算法排序的Friedman检验：对不同算法在不同数据集上的性能进行排序，若性能相同则取平分序值。之后对每个算法取平均序值，若算法性能相同，则平均序值也应该相同；</p><p>假定在$N$个数据集上比较$k$个算法，令$r_i$表示第$i$个算法的平均序值，不考虑平分序值的情况，则有变量</p><script type="math/tex; mode=display">\tau_{\chi^2}=\frac{12N}{k(k+1)}(\sum_{i=1}^{k}r_i^2-\frac{k(k+1)^2}{4})</script><p>服从自由度为$k-1$的$\chi^2$分布；</p><p>上述检验方法比较保守，现在通常使用新的变量：</p><script type="math/tex; mode=display">\tau_F=\frac{(N-1)\tau_{\chi^2}}{N(k-1)-\tau_{\chi^2}}</script><p>上述变量服从自由度为$k-1和(k-1)(N-1)$的F分布；</p><p>（2）若假设被拒绝，则说明算法性能显著不同，则需要使用“后序检验”来加以区分</p><p>Nemenyi检验计算出平均序值的临界值域，其中$q_\alpha$由查表给出：</p><script type="math/tex; mode=display">CD=q_\alpha\sqrt{\frac{k(k+1)}{6N}}</script><p>若两个算法的平均序值之差超出了上述$CD$，则以相应的置信度拒绝“两个算法性能相同”的假设；</p><h3 id="2-5-偏差与方差"><a href="#2-5-偏差与方差" class="headerlink" title="2.5 偏差与方差"></a>2.5 偏差与方差</h3><p>（1）偏差-方差分解（bias-variance decomposition）是解释学习算法泛化性能的工具之一；</p><p>对测试样本$x$，$y_D$为在数据集中的标记，$y$为真实标记，$f(x;D)$为学习模型的预测输出，则学习算法的期望预测：</p><script type="math/tex; mode=display">E(f;\mathcal{D})=bias^2(x)+var(x)+\varepsilon^2\\方差：var(x) = \mathbb{E}_D[f(x;D)-\overline{f}(x)]^2\\噪声：\varepsilon^2 = \mathbb{E}_D[(y_D-y)^2]\\偏差：bias^2(x)=(\overline{f}(x)-y)^2</script><p>说明<strong>学习算法的泛化误差可以分解为偏差、方差和噪声之和</strong>；</p><p>偏差：期望预测与真实结果的偏差，体现学习算法本身的拟合能力；</p><p>方差：刻画了数据扰动造成的影响；</p><p>噪声：刻画了学习问题本身的难度；</p><p>（2）偏差-方差窘境（bias-variance dilemma）</p><p>训练数据不足，拟合能力不够强，偏差主导；训练数据充足，拟合能力增加，方差主导；之后在加强可能会导致过拟合；</p><h1 id="第三章：线性模型"><a href="#第三章：线性模型" class="headerlink" title="第三章：线性模型"></a>第三章：线性模型</h1><h3 id="3-1-基本形式"><a href="#3-1-基本形式" class="headerlink" title="3.1 基本形式"></a>3.1 基本形式</h3><script type="math/tex; mode=display">f(x)=\omega^Tx+b</script><p>非线性模型可在线性模型的基础上通过引入层级结构或高维映射而得；</p><h3 id="3-2-线性回归"><a href="#3-2-线性回归" class="headerlink" title="3.2 线性回归"></a>3.2 线性回归</h3><p><strong>（1）最小二乘法</strong></p><p>求解$\omega$和$b$使得$E<em>{(\omega,b)}=\sum</em>{i=1}^m(y_i - \omega x_i- b)^2$最小化的过程</p><p>通过对$\omega$和$b$分别求导并等于0的方程求解可以得到</p><script type="math/tex; mode=display">\omega=\frac{\sum_{i=1}^m y_i(x_i - \overline x)}{\sum_{i=1}^mx_i^2-\frac{1}{m}(\sum_{i=1}^m x_i)^2}\\b = \frac{1}{m}\sum_{i=1}^m(y_i-\omega x_i)</script><p><strong>（2）多元线性回归</strong></p><p>当数据矩阵$\textbf{X}$满足$\textbf{X}^T\textbf{X}$为满秩矩阵或者正定矩阵时，可以学习得到</p><script type="math/tex; mode=display">\hat \omega^*=(\textbf{X}^T\textbf X)^{-1}\textbf{X}^T\textbf{y}</script><p>当上述矩阵并非满秩或者正定时，回得到多个满足条件的$\hat \omega$，考虑引入<strong>正则化项</strong>可以方便选择哪个进行输出；</p><p><strong>（3）对数线性回归</strong></p><script type="math/tex; mode=display">\ln y = \omega^Tx +b</script><p>考虑单调可微函数$g(·)$，令：</p><script type="math/tex; mode=display">y = g^{-1}(\omega^T x+ b)</script><h3 id="3-3-对数几率回归"><a href="#3-3-对数几率回归" class="headerlink" title="3.3 对数几率回归"></a>3.3 对数几率回归</h3><p>利用线性模型完成二分类任务</p><script type="math/tex; mode=display">y=\frac{1}{1+e^{-(\omega^Tx + b)}}</script><p>做线性回归时，需要对$y$的形式进行调整</p><script type="math/tex; mode=display">\ln \frac{y}{1-y}=\omega^Tx+b</script><p>其中回归得到的$y$表示样本作为正例的可能性，则$1-y$表示作为反例的可能性，则有</p><script type="math/tex; mode=display">P(y=1|x)=\frac{e^{\omega^T x + b}}{1+e^{\omega^T x + b}}\\P(y=0|x)=\frac{1}{1+e^{\omega^T x + b}}</script><p>对率回归模型最大化“对数似然”，即令每个样本属于真实标记的概率越大越好；</p><script type="math/tex; mode=display">\mathcal{l}(\omega, b)=\sum_{i=1}^m\ln p(y_i|x_i;\omega, b)</script><p>则原问题等价于最小化下面的式子，其中$\beta=(\omega;b),\hat x=(x;1)$：</p><script type="math/tex; mode=display">l(\beta)=\sum_{i=1}^m(-y_i\beta^T\hat x+\ln(1+e^{\beta^T\hat x}))</script><p>数值优化算法迭代求解：</p><script type="math/tex; mode=display">\beta^{t+1}=\beta^t-(\frac{\part^2 l(\beta)}{\part\beta\part\beta^T})^{-1}\frac{\part l(\beta)}{\part \beta}\\一阶导数：\frac{\part l(\beta)}{\part \beta}=-\sum_{i=1}^{m}\hat x_i(y_i-p_1(\hat x_i;\beta))\\二阶导数：\frac{\part^2 l(\beta)}{\part\beta\part\beta^T}=\sum_{i=1}^m\hat x_i\hat x_i^Tp_1(\hat x_i;\beta)(1-p_1(\hat x_i;\beta))</script>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 机器学习读书笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>6月1日计划</title>
       <link href="/2020/05/31/6%E6%9C%881%E6%97%A5%E8%AE%A1%E5%88%92/"/>
       <url>/2020/05/31/6%E6%9C%881%E6%97%A5%E8%AE%A1%E5%88%92/</url>
@@ -59,7 +116,7 @@
       
         <tags>
             
-            <tag> 机器学习笔记梳理 </tag>
+            <tag> 机器学习读书笔记 </tag>
             
         </tags>
       

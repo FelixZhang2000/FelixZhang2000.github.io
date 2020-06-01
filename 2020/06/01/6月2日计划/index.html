@@ -16,11 +16,11 @@
     <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
     <title>
         
-          机器学习笔记（一）绪论 - Felix Zhang
+          6月2日计划 - Felix Zhang
         
     </title>
 
-    <link rel="canonical" href="https://dusign.net/2020/05/31/机器学习笔记（一）绪论/">
+    <link rel="canonical" href="https://dusign.net/2020/06/01/6月2日计划/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -109,21 +109,21 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#机器学习读书笔记" title="机器学习读书笔记">机器学习读书笔记</a>
+                              <a class="tag" href="/tags/#计划" title="计划">计划</a>
                             
                         </div>
-                        <h1>机器学习笔记（一）绪论</h1>
+                        <h1>6月2日计划</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by Felix Zhang on
-                            2020-05-31
+                            2020-06-01
                         </span>
 
                         
                             <div class="blank_box"></div>
                             <span class="meta">
-                                Words <span class="post-count">1.8k</span> and
-                                Reading Time <span class="post-count">6</span> Minutes
+                                Words <span class="post-count">56</span> and
+                                Reading Time <span class="post-count">1</span> Minutes
                             </span>
                             <div class="blank_box"></div>
                             <!-- 不蒜子统计 start -->
@@ -262,98 +262,21 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h2 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章 绪论"></a>第一章 绪论</h2><h3 id="1-1-引言"><a href="#1-1-引言" class="headerlink" title="1.1 引言"></a>1.1 引言</h3><h3 id="1-2-基本术语"><a href="#1-2-基本术语" class="headerlink" title="1.2 基本术语"></a>1.2 基本术语</h3><p>（1）数据集 data set</p>
-<p>（2）示例 instance sample</p>
-<p>（3）属性值 attribute value</p>
-<p>（4）样本空间 sample space</p>
-<p>（5）分类：预测的是离散值；回归：预测的是连续值；</p>
-<p>（6）监督学习：回归、分类；无监督学习：聚类；</p>
-<p>（7）泛化能力 generalization</p>
-<h3 id="1-3-假设空间"><a href="#1-3-假设空间" class="headerlink" title="1.3 假设空间"></a>1.3 假设空间</h3><p>（1）科学推理的两大手段：归纳、演绎</p>
-<p>（2）归纳学习：从样例中学习；演绎：基本一套公理与基本规则进行推导；</p>
-<p>（3）机械学习：对训练样本进行记忆</p>
-<p>学习过程可以看作是一个在所有假设组成的空间中进行搜索的过程；搜索目标是找到与训练集匹配的假设；</p>
-<h3 id="1-4-归纳偏好"><a href="#1-4-归纳偏好" class="headerlink" title="1.4 归纳偏好"></a>1.4 归纳偏好</h3><p>归纳偏好：机器学习算法在学习过程中对某种类型假设的偏好；</p>
-<p>任何一种机器学习算法都必然有其归纳偏好，否则会被假设空间中看似在训练集上的“等效”假设所迷惑；</p>
-<p><strong>奥卡姆剃刀：若有多个假设或者观察，则选择最简单的那一个</strong>;</p>
-<p><strong>没有免费午餐定理：考虑两个学习算法，无论其中一个多么聪明，另一个多么笨拙，但二者的期望性能相同;</strong></p>
-<p>（可使用分类错误率$p(x)\mathbb{I}(h(x)\ne f(x)P(h|X,\Sigma)$来度量算法的性能，$\Sigma$代表一种算法）</p>
-<p>但事实上，NFL定理成立的重要条件是所有“问题”出现的条件与可能性均相同；</p>
-<h3 id="习题选编"><a href="#习题选编" class="headerlink" title="习题选编"></a>习题选编</h3><p>本章1.4节在论述NFL定理时，默认使用了“分类错误率”作为性能度量来对分类器进行了评估。若换用其他度量$l$，则式（1.1）将会改写为</p>
-<script type="math/tex; mode=display">
-E_{ote}(\Sigma_a|X,f) = \sum_h\sum_{x\in\chi - X}P(x)\mathcal{l}(h(x), f(x))P(h|X, \Sigma_a)</script><p>试证明，免费午餐定理依然成立。</p>
-<h2 id="第二章-模型评估与选择"><a href="#第二章-模型评估与选择" class="headerlink" title="第二章 模型评估与选择"></a>第二章 模型评估与选择</h2><h3 id="2-1-经验误差与过拟合"><a href="#2-1-经验误差与过拟合" class="headerlink" title="2.1 经验误差与过拟合"></a>2.1 经验误差与过拟合</h3><p>（1）错误率 error rate $E=a/m$</p>
-<p>（2）精度 accuracy  $1-a/m$</p>
-<p>（3）训练误差 training error 在训练集上的误差</p>
-<p>（4）泛化误差 generalization error 在新样本上的误差</p>
-<p>（5）过拟合 overfitting：将训练样本自身的一些特点当作所有潜在样本都会具有的一般性质</p>
-<p><strong>过拟合是机器学习面临的关键障碍。</strong>模型选择：对候选模型的泛化误差进行<strong>评估</strong>，然后选择泛化误差最小的模型。</p>
-<h3 id="2-2-评估方法"><a href="#2-2-评估方法" class="headerlink" title="2.2 评估方法"></a>2.2 评估方法</h3><p>使用测试集测试判别能力，并将测试误差作为泛化误差的近似；</p>
-<p>测试集应该尽量和训练集互斥；</p>
-<p><strong>2.2.1 留出法</strong></p>
-<p>直接将数据集$D$划分为两个互斥的集合，其中一个作为训练集，另一个作为测试集；</p>
-<p>数据集的划分尽量保持数据分布的一致性（如采用分层采样等方法）</p>
-<p>一般要采用若干次随机划分、重复进行试验评估后去平均值作为留出法的评估结果；</p>
-<p><strong>2.2.2 交叉验证法</strong></p>
-<p>通过分层采样的方式将数据集化为$k$个大小相似的互斥子集，取$k-1$个子集为训练集，剩下一个作为测试集；</p>
-<p>留一法：使用数据只少了一个样本，则训练出的模型和用整体数据集训练出的模型比较相似，但计算开销较大；</p>
-<p><strong>2.2.3 自助法</strong></p>
-<p>估计偏差：由于训练样本规模不同而导致；</p>
-<p>每次随机从数据集中抽取一个样本复制后放回，重复m次后即可得到一个包含m个数据的数据集，并将其作为训练集，剩余的未被采样的部分作为测试集。这样的结果称为包外估计（out_of_bag estimate）。其中，测试集所占比例约为：</p>
-<script type="math/tex; mode=display">
-\lim_{m\rightarrow\infty}(1-\frac{1}{m})^m =  \frac{1}{e}\approx 0.368</script><p>自助法在数据集较小、难以划分有效训练/测试集时有用，但会影响数据分布；</p>
-<p><strong>2.2.4 调参与最终模型</strong></p>
-<p>调参 parameter tuning</p>
-<p>现实做法：对每个参数选定一个调节范围和变化步长</p>
-<h3 id="2-3-性能度量"><a href="#2-3-性能度量" class="headerlink" title="2.3 性能度量"></a>2.3 性能度量</h3><p><strong>回归任务常用“均方误差”</strong></p>
-<script type="math/tex; mode=display">
-E(f;D) = \frac{1}{m}\sum_{i=1}^{m}(f(x_i) - y_i)^2</script><p>对于数据分布$\mathcal{D}$ 和概率密度函数$p(·)$ ，均方误差可以描述为</p>
-<script type="math/tex; mode=display">
-E(f;\mathcal{D}) = \int_{x\~\mathcal{D}}(f(x)-y)^2p(x)dx</script><p><strong>分类任务的性能度量</strong></p>
-<p>（1）错误率、精度、查准率、查全率和$F1$</p>
-<p>真正例（TP）、假正例（FP）、真反例（TN）、假反例（FN）</p>
-<script type="math/tex; mode=display">
-查准率：P=\frac{TP}{TP+FP}\\
-查全率：R=\frac{TP}{TP+FN}</script><p>一般而言，查准率和查全率是一组相互矛盾的度量；</p>
-<p>根据查准率和查全率可以绘制$P-R$曲线；</p>
-<p>若一个学习器的PR曲线完全被另一个学习器的曲线包住，则可断言或者性能优于前者；</p>
-<p>除此外，还可比较PR曲线所包围的面积，一定程度上度量了二者双高的比例；</p>
-<p><strong>（2）平衡点（Break Even Point）：</strong>查准率等于查全率时的取值，平衡点越大则学习器性能越好；</p>
-<p><strong>（3）F1度量</strong></p>
-<script type="math/tex; mode=display">
-F1=\frac{2\times P \times R}{P+R}</script><p>在一些任务中，对于查准率和查全率有不同的偏好，则F1度量可以进行加权调整为：</p>
-<script type="math/tex; mode=display">
-F1=\frac{(1+\beta^2)\times P \times R}{\beta^2\times P + R}</script><p>对于多混淆矩阵的情形，可以考虑两种方法获取其全局性能：（1）对所有混淆矩阵的度量取平均（2）对混淆矩阵的元素取平均</p>
-<p><strong>（4）ROC受试者工作特征（Receiver Operating Characteristic）</strong></p>
-<script type="math/tex; mode=display">
-真正例率：TPR = \frac{TP}{TP+FN}\\
-假正例率：FPR = \frac{FP}{TN+FP}</script><p>基于TPR和FPR两组数据绘制出的曲线称为学习器的ROC曲线；</p>
-<p>若一个学习器的曲线完全被另外一个学习器包住，则可断言后者的性能要优于前者；</p>
-<p><strong>（5）AUC: Area Under ROC curve</strong></p>
-<p>当两个学习器的ROC曲线出现交叉时，则考虑ROC曲线所包含的面积；AUC估计式可以表达为</p>
-<script type="math/tex; mode=display">
-AUC = \frac{1}{2}\sum_{i=1}^{m-1}(x_{i+1}-x_i)\times(y_i+y_{i+1})</script><p><strong>（6）代价敏感错误率</strong></p>
-<p>非均等代价 unequal lost的前提下会存在代价矩阵，并且用$cost_{ij}$表示上述矩阵元；</p>
-<p>对于二分类问题，代价敏感错误率可以定义为</p>
-<script type="math/tex; mode=display">
-E(f;\mathcal{D};cost)=\frac{1}{m}(\sum_{x_i\in D^+}\mathbb{I}(f(x_i)\neq y_i)*cost_{01}+\sum_{x_i\in D^-}\mathbb{I}(f(x_i)!= y_i)*cost_{10})</script><p>在非均等代价下，ROC曲线无法反映学习器的总体期望代价，而<strong>代价曲线图</strong>则可达到上述目的；</p>
-<script type="math/tex; mode=display">
-横轴（正例概率代价）=\frac{p*cost_{01}}{p*cost_{01}+(1-p)*cost_{10}}\\</script><p>上述$p$代表正例的概率；</p>
-<script type="math/tex; mode=display">
-纵轴（归一化代价）=\frac{FNR*p*cost_{01}+FPR*(1-p)*cost_{10}}{p*cost_{01}+(1-p)*cost_{10}}</script><p>FPR为假正例率，FNR为假反例率；</p>
-<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3>
+                <h3 id="第一段"><a href="#第一段" class="headerlink" title="第一段"></a>第一段</h3><p>面向对象程序设计</p>
+<h3 id="第二段"><a href="#第二段" class="headerlink" title="第二段"></a>第二段</h3><p>机器学习导论</p>
+<h3 id="第三段"><a href="#第三段" class="headerlink" title="第三段"></a>第三段</h3><p>机器学习导论</p>
+<h3 id="第四段"><a href="#第四段" class="headerlink" title="第四段"></a>第四段</h3><p>大学化学</p>
+<h3 id="第五段"><a href="#第五段" class="headerlink" title="第五段"></a>第五段</h3><p>Leetcode刷题与算法</p>
+<h3 id="第六段"><a href="#第六段" class="headerlink" title="第六段"></a>第六段</h3><p>量子信息笔记整理</p>
+
                 
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2020/05/31/概率统计复习笔记（一）/" data-toggle="tooltip" data-placement="top" title="概率统计复习笔记（一）">&larr; Previous Post</a>
-                    </li>
-                    
                     
                     <li class="next">
-                        <a href="/2020/05/29/丑数问题/" data-toggle="tooltip" data-placement="top" title="丑数问题">Next Post &rarr;</a>
+                        <a href="/2020/06/01/机器学习笔记（三）/" data-toggle="tooltip" data-placement="top" title="机器学习笔记（三）">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -409,7 +332,7 @@ E(f;\mathcal{D};cost)=\frac{1}{m}(\sum_{x_i\in D^+}\mathbb{I}(f(x_i)\neq y_i)*co
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#机器学习读书笔记" title="机器学习读书笔记">机器学习读书笔记</a>
+                          <a class="tag" href="/tags/#计划" title="计划">计划</a>
                         
                     </div>
                 </section>
