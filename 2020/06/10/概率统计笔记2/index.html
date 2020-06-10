@@ -16,11 +16,11 @@
     <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
     <title>
         
-          6月2日计划 - Felix Zhang
+          概率统计笔记2 - Felix Zhang
         
     </title>
 
-    <link rel="canonical" href="https://dusign.net/2020/06/01/6月2日计划/">
+    <link rel="canonical" href="https://dusign.net/2020/06/10/概率统计笔记2/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -109,21 +109,21 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#计划" title="计划">计划</a>
+                              <a class="tag" href="/tags/#概率统计笔记" title="概率统计笔记">概率统计笔记</a>
                             
                         </div>
-                        <h1>6月2日计划</h1>
+                        <h1>概率统计笔记2</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by Felix Zhang on
-                            2020-06-01
+                            2020-06-10
                         </span>
 
                         
                             <div class="blank_box"></div>
                             <span class="meta">
-                                Words <span class="post-count">56</span> and
-                                Reading Time <span class="post-count">1</span> Minutes
+                                Words <span class="post-count">1.3k</span> and
+                                Reading Time <span class="post-count">5</span> Minutes
                             </span>
                             <div class="blank_box"></div>
                             <!-- 不蒜子统计 start -->
@@ -184,20 +184,6 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/archive/">Archives</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/photography/">Photography</a>
                         </li>
                         
@@ -206,6 +192,20 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
@@ -262,12 +262,126 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h3 id="第一段"><a href="#第一段" class="headerlink" title="第一段"></a>第一段</h3><p>面向对象程序设计</p>
-<h3 id="第二段"><a href="#第二段" class="headerlink" title="第二段"></a>第二段</h3><p>机器学习导论</p>
-<h3 id="第三段"><a href="#第三段" class="headerlink" title="第三段"></a>第三段</h3><p>机器学习导论</p>
-<h3 id="第四段"><a href="#第四段" class="headerlink" title="第四段"></a>第四段</h3><p>大学化学</p>
-<h3 id="第五段"><a href="#第五段" class="headerlink" title="第五段"></a>第五段</h3><p>Leetcode刷题与算法</p>
-<h3 id="第六段"><a href="#第六段" class="headerlink" title="第六段"></a>第六段</h3><p>量子信息笔记整理</p>
+                <h1 id="随机变量及其分布"><a href="#随机变量及其分布" class="headerlink" title="随机变量及其分布"></a>随机变量及其分布</h1><h4 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1.基本概念"></a>1.基本概念</h4><p>随机变量：定义在样本空间$\Omega$上的实值函数$X(\omega)$称为随机变量，用大写字母表示变量，小写字母表示取值；</p>
+<p>分布函数：$F(x)=P(X\le x)$</p>
+<p>分布函数的三条基本性质是判别某个函数是否可以构成分布函数的充要条件</p>
+<p>（1）单调性：$x_1\le x_2$，则有$F(x_1)\le F(x_2)$</p>
+<p>（2）有界性：$F(-\infty) = \lim<em>{x\rightarrow-\infty}F(x) = 0$，$F(\infty)=\lim</em>{x\rightarrow\infty}F(x)=1$</p>
+<p>（3）右连续性：$\lim_{x\rightarrow x_0^+}F(x)=F(x_0)$</p>
+<p>柯西分布函数</p>
+<script type="math/tex; mode=display">
+F(x)=\frac 1\pi(\arctan x+\frac \pi 2)</script><h4 id="2-离散随机变量的概率分布列"><a href="#2-离散随机变量的概率分布列" class="headerlink" title="2.离散随机变量的概率分布列"></a>2.离散随机变量的概率分布列</h4><script type="math/tex; mode=display">
+p_i=P(X=x_i)</script><p>分布列的基本性质：非负性、正则性</p>
+<p>分布函数：$F(x)=\sum_{x_1\le x}p(x_i)$</p>
+<p>单点分布（退化分布）：$P(X=c) = 1$</p>
+<h4 id="3-连续随机变量的概率密度函数"><a href="#3-连续随机变量的概率密度函数" class="headerlink" title="3.连续随机变量的概率密度函数"></a>3.连续随机变量的概率密度函数</h4><script type="math/tex; mode=display">
+F(x) = \int_{-\infty}^xp(t)dt</script><p>概率密度函数的基本性质：非负性、正则性</p>
+<h4 id="4-数学期望：消除随机性的重要手段"><a href="#4-数学期望：消除随机性的重要手段" class="headerlink" title="4.数学期望：消除随机性的重要手段"></a>4.数学期望：消除随机性的重要手段</h4><p>离散随机变量的数学期望</p>
+<script type="math/tex; mode=display">
+E(X)=\sum_{i}x_ip(x_i)</script><p>连续随机变量的数学期望</p>
+<script type="math/tex; mode=display">
+E(X)=\int_{-\infty}^{\infty}xp(x)dx</script><p><strong>注意，上述数学期望成立的条件为具有绝对收敛性！！！，否则则说明数学期望不存在</strong></p>
+<p>数学期望的性质基本定理：若随机变量$X$的分布用分布列$p(x_i)$或用密度函数$p(x)$表示，则$X$的某一函数$g(X)$的数学期望为</p>
+<script type="math/tex; mode=display">
+离散场合：E[g(X)]=\sum_ig(x_i)p(x_i) \\ 
+连续场合：E[g(X)]=\int_{-\infty}^{+\infty}g(x)p(x)dx</script><p>对任意的两个函数$g_1(x)$和$g_2(x)$，有如下式子成立</p>
+<script type="math/tex; mode=display">
+E[g_1(x)\pm g_2(x)]=E[g_1(x)]\pm E[g_2(x)]</script><h4 id="5-方差与标准差"><a href="#5-方差与标准差" class="headerlink" title="5.方差与标准差"></a>5.方差与标准差</h4><p>方差：$VAR(X)=E(X-E(X))^2$</p>
+<p>方差的性质：</p>
+<script type="math/tex; mode=display">
+Var(X)=E(X^2)-[E(X)]^2\\
+Var(aX+b)=a^2Var(X)</script><p><strong>切比雪夫不等式</strong></p>
+<p>设随机变量$X$的数学期望和方差都存在，则对任意常数$\varepsilon&gt;0$，有</p>
+<script type="math/tex; mode=display">
+P(|X-E(X)|\ge\varepsilon)\le\frac{Var(X)}{\varepsilon^2}</script><p>$|X-E(X)|\ge\varepsilon$成为大偏差，根据切比雪夫不等式可以对大偏差的发生概率进行估计；</p>
+<p>若随机变量$X$的方差存在，则$Var(x)=0$的充分必要条件是$X$几乎处处为某个常数$a$，即$P(X=a)=1$；</p>
+<h4 id="6-常用离散分布"><a href="#6-常用离散分布" class="headerlink" title="6.常用离散分布"></a>6.常用离散分布</h4><p>（1）二项分布 随机变量$X$表示n重伯努利实验中的成功次数，用$b(n,p)$表示</p>
+<script type="math/tex; mode=display">
+P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}</script><p> $n=1$时的特殊二项分布情形称为伯努利分布；</p>
+<p>数学期望：$np$；方差：$np(1-p)$</p>
+<p>（2）泊松分布 往往与计数过程相联系</p>
+<script type="math/tex; mode=display">
+P(X=k)=\frac{\lambda^k}{k!}e^{-\lambda}</script><p>数学期望：$\lambda$；方差：$\lambda$</p>
+<p>方差的计算过程</p>
+<script type="math/tex; mode=display">
+E(X^2) = \sum_{k}k^2\frac{\lambda^k}{k!}e^{-\lambda} = \sum_kk\frac{\lambda^k}{(k-1)!}e^{-\lambda} = \sum_k[(k-1)+1]\frac{\lambda^k}{(k-1)!}e^{-\lambda}=\lambda^2+\lambda\\
+Var(X)=E[X^2]-E^2[X]=\lambda^2+\lambda-\lambda^2=\lambda</script><p><strong>泊松定理：泊松分布可以作为当$n$比较大时的二项分布的一种近似</strong></p>
+<p>在n重伯努利实验中，记事件$A$在一次试验中发生的概率为$p_n$，如果当$n\rightarrow\infty$时，有$np_n\rightarrow\lambda$，则</p>
+<script type="math/tex; mode=display">
+\lim_{n\rightarrow\infty}\binom{n}{k}p_n^k(1-p_n)^{n-k}=\frac{\lambda^k}{k!}e^{-\lambda}</script><p>当$n$越大而$p$越小时，近似程度越好；</p>
+<p>（3）超几何分布 从一个有限总体中进行不放回抽样；</p>
+<script type="math/tex; mode=display">
+P(X=k)=\frac{\binom{M}{k}\binom{N-M}{n-k}}{\binom{N}{n}}</script><p>数学期望：$n\frac{M}{N}$；方差：$\frac{nM(N-M)(N-n)}{N^2(N-1)}$</p>
+<p>超几何分布的二项近似</p>
+<script type="math/tex; mode=display">
+\frac{\binom{M}{k}\binom{N-M}{n-k}}{\binom{N}{n}}=\binom{n}{k}p^k(1-p)^{n-k}</script><p>（4）几何分布 在伯努利实验序列中，如果$X$为事件$A$首次出现的试验次数</p>
+<script type="math/tex; mode=display">
+P(X=k)=(1-p)^{k-1}p</script><p>（使用逐项微分计算）数学期望：$\frac 1 p$；方差：$\frac{1-p}{p^2}$</p>
+<p><strong>几何分布具有无记忆性：</strong></p>
+<script type="math/tex; mode=display">
+P(X>m+n|X>m)=P(X>n)</script><p>（5）负二项分布 X表示事件A第$r$次出现时的试验次数</p>
+<script type="math/tex; mode=display">
+P(X=k)=\binom{k-1}{r-1}p^r(1-p)^{k-r}</script><p>数学期望：$\frac r p$；方差：$\frac{r(1-p)}{p^2}$</p>
+<h4 id="7-常用离散分布"><a href="#7-常用离散分布" class="headerlink" title="7.常用离散分布"></a>7.常用离散分布</h4><p>（1）正态分布 记做$N(\mu,\sigma^2)$</p>
+<script type="math/tex; mode=display">
+p(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}</script><p>$\mu$称为位置参数， $\sigma$称为尺度参数；</p>
+<p>标准正态分布：$\mu=0, \sigma^2 = 1$</p>
+<p>一切正态变量都可以通过线性变换化成标准正态变量：</p>
+<script type="math/tex; mode=display">
+U=\frac{X-\mu}{\sigma}</script><p>标准化正态变量数学期望：$E[X]=0$；方差：$Var[X]=1$；</p>
+<p>可从标准化正态变量推导出非标准变量的数学期望：$E[X] = \mu$；方差：$Var[X]=\sigma^2$；</p>
+<p><strong>3$\sigma$原则：如果某随机变量的取值概率近似满足下列式子，则可认为该随机变量服从正态分布；</strong></p>
+<script type="math/tex; mode=display">
+P(\mu-\sigma<X<\mu+\sigma)=0.6826\\
+P(\mu-2\sigma<X<\mu+2\sigma)=0.9545\\
+P(\mu-3\sigma<X<\mu+3\sigma)=0.9973</script><p>（2）均匀分布</p>
+<p>（3）指数分布：常常用于对寿命进行估计</p>
+<script type="math/tex; mode=display">
+p(x)=\lambda e^{-\lambda x}, x\ge0</script><p>数学期望：$\frac{1}{\lambda}$；方差：$\frac{1}{\lambda^2}$；</p>
+<p><strong>指数分布具有无记忆性：</strong></p>
+<script type="math/tex; mode=display">
+P(X>s+t|X>s)=P(X>t)</script><p><strong>某一个生产过程中，发生故障的总次数满足泊松分布，而故障的发生间隔满足指数分布</strong></p>
+<p>（4）伽马分布</p>
+<p><strong>伽马函数</strong></p>
+<script type="math/tex; mode=display">
+\Gamma(\alpha)=\int_0^\infty x^{\alpha-1}e^{-x}dx\\
+性质1:\Gamma(1)=1,\Gamma(\frac{1}{2})=\sqrt{\pi}\\
+性质2:\Gamma(\alpha+1)=\alpha\Gamma(\alpha), \Gamma(n+1)=n!</script><p><strong>Gamma分布</strong> 记作$Ga(\alpha,\lambda)$</p>
+<script type="math/tex; mode=display">
+p(x)=\frac{\lambda^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\lambda x}</script><p>数学期望：$\frac \alpha \lambda$；方差：$\frac \alpha {\lambda^2}$</p>
+<p><strong>$\alpha=1$伽马分布就是指数分布，$\alpha=\frac n2, \lambda=\frac1 2$时的分布就是$\chi^2$分布，记作$\chi^2(n)$</strong></p>
+<p>（5）Beta分布</p>
+<p><strong>Beta函数</strong></p>
+<script type="math/tex; mode=display">
+B(a,b)=\int_0^1x^{a-1}(1-x)^{b-1}dx\\
+性质1:B(a,b)=B(b,a)\\
+性质2:B(a,b)=\frac{\Gamma(a)\Gamma(b)}{\Gamma(a+b)}</script><p><strong>Beta分布 $Be(a,b)$</strong></p>
+<script type="math/tex; mode=display">
+p(x)=\frac{\Gamma(a+b)}{\Gamma(a)\Gamma(b)}x^{a-1}(1-x)^{b-1}, 0 < x< 1</script><p>数学期望$\frac a {a+b}$，方差$\frac{ab}{(a+b)^2(a+b+1)}$</p>
+<h4 id="8-随机变量函数的分布"><a href="#8-随机变量函数的分布" class="headerlink" title="8.随机变量函数的分布"></a>8.随机变量函数的分布</h4><p>对于离散随机变量函数和$Y$为离散型变量的连续随机变量函数，直接将取值一一列出即可，此处主要讨论连续随机变量函数的分布；</p>
+<p><strong>g(x)为连续随机变量时：</strong></p>
+<p>定理一：设$X$为连续随机变量，其密度函数为$p_X(x)$，$Y=g(x)$是另一个连续随机变量。若$y=g(x)$严格单调，其反函数$h(y)$有连续导函数，则$Y=g(x)$的密度函数为：</p>
+<script type="math/tex; mode=display">
+p_Y(y)=p_X[h(y)]|h'(y)|</script><p>定理二：设随机变量$X$服从正态分布$N(\mu,\sigma^2)$，则当$a\ne 0$时，有$Y=aX+b$服从$N(a\mu + b, a^2\sigma^2)$；</p>
+<p>定理三：<strong>（对数正态分布）</strong>设随机变量$X$服从$N(\mu,\sigma^2)$，则$Y=e^X$的密度函数为:</p>
+<script type="math/tex; mode=display">
+p_Y(y)=\frac{1}{\sqrt{2\pi}\sigma}\exp\{-\frac{(\ln y - \mu)^2}{2\sigma^2}\}</script><p>定理四：设随机变量$X$服从Gamma分布$Ga(\alpha,\lambda)$，则当$k&gt;0$时，有$Y=kX$服从分布$Ga(\alpha,\lambda/k)$;</p>
+<p>定理五：随机变量$X$的分布函数$F_X(x)$为严格单增的连续函数，其反函数$F_X^{-1}(y)$存在，则$Y=F_X(X)$服从$(0,1)$上的均匀分布$U(0,1)$;</p>
+<p>若使用上述定理直接求密度函数比较困难，则可以考虑<strong>直接由$F_Y(y)=P(g(X)\le y)$出发根据函数特点处理</strong>；</p>
+<h4 id="9-分布的其它特征数"><a href="#9-分布的其它特征数" class="headerlink" title="9.分布的其它特征数"></a>9.分布的其它特征数</h4><p>$k$阶原点矩：$\mu_k=E(X^k)$；</p>
+<p>$k$阶中心矩：$\nu_k=E(X-E(X))^k$</p>
+<p>中心矩和原点矩之间的关系：$\nu<em>k=\sum</em>{i=0}^k\binom{k}{i}\mu_i(-\mu_1)^{k-i}$</p>
+<p>变异系数：可消除量纲，用于比较两个随机变量的波动程度大小（前提，二阶矩存在）</p>
+<script type="math/tex; mode=display">
+C_{\nu}(X)=\frac{\sigma(X)}{E(X)}</script><p>分位数：$x_p$称为下侧$p$分位数</p>
+<script type="math/tex; mode=display">
+F(x_p)=\int_{-\infty}^{x_p}p(x)dx=p</script><h4 id="10-偏度系数和峰度系数"><a href="#10-偏度系数和峰度系数" class="headerlink" title="10.偏度系数和峰度系数"></a>10.偏度系数和峰度系数</h4><p>（1）设随机变量的三阶矩存在，则可以定义下列比值为偏度系数</p>
+<script type="math/tex; mode=display">
+\beta_S=\frac{\nu_{3}}{\nu_2^{3/2}}=\frac{E(X-E(X))^3}{(Var(X))^{3/2}}</script><p>$\beta_S$描述分布偏离对称性程度的一个特征数，大于0时称为正偏（重尾在右侧），小于0称为负偏（重尾在左侧）；</p>
+<p>（2）设随机变量的四阶矩存在，则定义下列比值为峰度系数</p>
+<script type="math/tex; mode=display">
+\beta_k=\frac{\nu_4}{\nu_2^2}-3=\frac{E(X-E(X))^4}{Var^2(X)} - 3</script><p>$\beta_k$描述分布尖峭程度和尾部粗细的一个特征数；$\beta_k$是相对于正态分布而言的超出量；</p>
+<p><strong>峰度和偏度都是描述分布形状的特征数</strong></p>
 
                 
                 <hr>
@@ -276,7 +390,7 @@
                     
                     
                     <li class="next">
-                        <a href="/2020/06/01/机器学习笔记（三）/" data-toggle="tooltip" data-placement="top" title="机器学习笔记（三）">Next Post &rarr;</a>
+                        <a href="/2020/06/05/数据结构说明/" data-toggle="tooltip" data-placement="top" title="数据结构说明">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -332,7 +446,7 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#计划" title="计划">计划</a>
+                          <a class="tag" href="/tags/#概率统计笔记" title="概率统计笔记">概率统计笔记</a>
                         
                     </div>
                 </section>
