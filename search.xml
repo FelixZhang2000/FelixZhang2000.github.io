@@ -4,6 +4,109 @@
   
     
     <entry>
+      <title>财务建模</title>
+      <link href="/2021/02/13/%E8%B4%A2%E5%8A%A1%E5%BB%BA%E6%A8%A1/"/>
+      <url>/2021/02/13/%E8%B4%A2%E5%8A%A1%E5%BB%BA%E6%A8%A1/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 金融技能 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>应用随机过程</title>
+      <link href="/2020/09/09/%E5%BA%94%E7%94%A8%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B/"/>
+      <url>/2020/09/09/%E5%BA%94%E7%94%A8%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 提升数学基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>保研后暑假计划</title>
+      <link href="/2020/06/26/%E4%BF%9D%E7%A0%94%E5%90%8E%E6%9A%91%E5%81%87%E8%AE%A1%E5%88%92/"/>
+      <url>/2020/06/26/%E4%BF%9D%E7%A0%94%E5%90%8E%E6%9A%91%E5%81%87%E8%AE%A1%E5%88%92/</url>
+      
+        <content type="html"><![CDATA[<h1 id="计划课程"><a href="#计划课程" class="headerlink" title="计划课程"></a>计划课程</h1><p>《计算机系统基础》</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>最小生成树算法</title>
+      <link href="/2020/06/21/%E5%9B%BE%E8%AE%BA/"/>
+      <url>/2020/06/21/%E5%9B%BE%E8%AE%BA/</url>
+      
+        <content type="html"><![CDATA[<h1 id="图论"><a href="#图论" class="headerlink" title="图论"></a>图论</h1><h3 id="1-并查集"><a href="#1-并查集" class="headerlink" title="1. 并查集"></a>1. 并查集</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">查找（find）：确定元素属于哪个集合。不断向上查找，找到根节点，根据根节点判断是否属于同一集合；</span><br><span class="line">合并（union）：将两个子集合并为一个集合。将一棵树作为另外一棵树的子树，从而变成更大的树；</span><br></pre></td></tr></table></figure><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">  <span class="keyword">while</span>(x != father[x])&#123;</span><br><span class="line">    x = <span class="built_in">find</span>(father[x]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> father[x];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Union</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">  x = <span class="built_in">find</span>(x);</span><br><span class="line">  y = <span class="built_in">find</span>(y);</span><br><span class="line">  <span class="keyword">if</span>(x != y)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">height</span>[x] &gt; <span class="built_in">height</span>[y])&#123;</span><br><span class="line">       father[y] = x;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">height</span>[x] &lt; <span class="built_in">height</span>[y])&#123;</span><br><span class="line">       father[x] = y;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">       father[x] = y;</span><br><span class="line">       <span class="built_in">height</span>[y]++;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="2-最小生成树：用最小的代价遍历全部的节点"><a href="#2-最小生成树：用最小的代价遍历全部的节点" class="headerlink" title="2. 最小生成树：用最小的代价遍历全部的节点"></a>2. 最小生成树：用最小的代价遍历全部的节点</h3><h4 id="Kruskal算法"><a href="#Kruskal算法" class="headerlink" title="Kruskal算法"></a>Kruskal算法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Input：一个加权连通图(V,E)</span><br><span class="line">Output: 利用集合得到的最小生成树（V_new, E_new）</span><br><span class="line">1 对所有边按照权重排序</span><br><span class="line">2 根据权重对边从小到大遍历：</span><br><span class="line">3    如果边的两点不属于一个集合：</span><br><span class="line">4       将u,v放入一个集合中，并将边放入边集合</span><br><span class="line">5 最后使用Find函数判断是否只有一个最小生成树</span><br></pre></td></tr></table></figure><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span>&#123;</span></span><br><span class="line">  <span class="keyword">int</span> from;</span><br><span class="line">  <span class="keyword">int</span> to;</span><br><span class="line">  <span class="keyword">int</span> weight;</span><br><span class="line">  <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> edge&amp; e)<span class="keyword">const</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> weight &lt; e.weight;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Kruskal</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> edgenum)</span></span>&#123;</span><br><span class="line">  Initial(n);</span><br><span class="line">  sort(edge, edge+edgenum);<span class="comment">//edge是一个边类型数组</span></span><br><span class="line">  <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; edgenum; ++i)&#123;</span><br><span class="line">    Edge cur = edge[i];</span><br><span class="line">    <span class="comment">//满足下述条件的边是属于最小生成树的</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">find</span>(cur.from) != <span class="built_in">find</span>(cur.to))&#123;</span><br><span class="line">      <span class="keyword">union</span>(cur.from, cur.to);</span><br><span class="line">      sum += cur.weight;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="Prim算法"><a href="#Prim算法" class="headerlink" title="Prim算法"></a>Prim算法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Input：一个加权连通图(V,E)</span><br><span class="line">Output: 利用集合得到的最小生成树</span><br><span class="line">1 选定任意一个节点，填入V_new中，E_new为空集</span><br><span class="line">2 REPEAT UNTIL V_new &#x3D; V</span><br><span class="line">3   在集合E中选择权重最小的边（u,v），其中u为V_new中的元素，v不在V_new中</span><br><span class="line">4   将v加入V_new中，并且将上述边加入E_new中</span><br></pre></td></tr></table></figure><h3 id="3-最短路径：某两个特定节点之间的最短路"><a href="#3-最短路径：某两个特定节点之间的最短路" class="headerlink" title="3. 最短路径：某两个特定节点之间的最短路"></a>3. 最短路径：某两个特定节点之间的最短路</h3><h4 id="Dijskstra算法（广搜-优先队列）"><a href="#Dijskstra算法（广搜-优先队列）" class="headerlink" title="Dijskstra算法（广搜+优先队列）"></a>Dijskstra算法（广搜+优先队列）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Input: 图G&#x3D;(V,E)，源点s，终点v，集合S，V</span><br><span class="line">Output: 权重和最小的路径</span><br><span class="line">1 将源点s放入优先级队列qu中</span><br><span class="line">2 Repeat:</span><br><span class="line">3   取出优先级队列中的头部节点，做广度优先遍历，并对距离进行更新</span><br><span class="line">4 返回目标终点的距离值</span><br></pre></td></tr></table></figure><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">edge</span>&#123;</span></span><br><span class="line">  <span class="keyword">int</span> to;</span><br><span class="line">  <span class="keyword">int</span> length;</span><br><span class="line">  edge(<span class="keyword">int</span> t, <span class="keyword">int</span> l): to(t), length(l)&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span>&#123;</span></span><br><span class="line">  <span class="keyword">int</span> number;</span><br><span class="line">  <span class="keyword">int</span> distance;</span><br><span class="line">  <span class="built_in">point</span>(<span class="keyword">int</span> n, <span class="keyword">int</span> d): number(n), distance(d) &#123;&#125;</span><br><span class="line">  <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> <span class="built_in">point</span>&amp; p) <span class="keyword">const</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> distance &gt; p.distance;<span class="comment">//此处考虑到queue使用的是最大堆实现的</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//基于优先级队列的广搜：每次优先考虑离s最近的点</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dijskstra</span><span class="params">(<span class="keyword">int</span> s)</span></span>&#123;</span><br><span class="line">  priority_queue&lt;<span class="built_in">point</span>&gt; qu;</span><br><span class="line">  dis[s] = <span class="number">0</span>;</span><br><span class="line">  qu.push(<span class="built_in">point</span>(s,dis[s]));</span><br><span class="line">  <span class="keyword">while</span>(!qu.empty)&#123;</span><br><span class="line">    <span class="keyword">int</span> cur = qu.top().number;</span><br><span class="line">    qu.pop();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; graph[cur].<span class="built_in">size</span>(); ++i)&#123;</span><br><span class="line">      <span class="keyword">int</span> v = graph[cur][i].to;</span><br><span class="line">      <span class="keyword">int</span> d = graph[cur][i].length;</span><br><span class="line">      <span class="keyword">if</span>(dis[v] &gt; dis[u] + d)&#123;</span><br><span class="line">        dis[v] = dis[u] + d;</span><br><span class="line">        qu.push(<span class="built_in">point</span>(u, dis[v]));</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="4-拓扑排序：有向图的排序"><a href="#4-拓扑排序：有向图的排序" class="headerlink" title="4. 拓扑排序：有向图的排序"></a>4. 拓扑排序：有向图的排序</h3><h3 id="5-关键路径"><a href="#5-关键路径" class="headerlink" title="5. 关键路径"></a>5. 关键路径</h3>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>回溯算法</title>
+      <link href="/2020/06/13/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/"/>
+      <url>/2020/06/13/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="回溯算法"><a href="#回溯算法" class="headerlink" title="回溯算法"></a>回溯算法</h1><p>关于穷举，一直都是我忽略的，今天来专门学习下</p><p><strong>解决一个回溯问题，本质上一个遍历决策树的过程</strong></p><blockquote><p>（1）路径：已经作出的选择</p><p>（2）选择列表：当前可以做的选择</p><p>（3）结束条件：无法继续做选择的条件</p></blockquote><p><strong>回溯算法的基本框架</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">result &#x3D; []</span><br><span class="line">def backtrack(路径，选择列表)：</span><br><span class="line">    if 满足条件</span><br><span class="line">       result.add(路径)</span><br><span class="line">       return</span><br><span class="line">       </span><br><span class="line">    for 选择 in 选择列表</span><br><span class="line">       做选择</span><br><span class="line">       backtrack(选择，选择列表)</span><br><span class="line">       撤销选择</span><br></pre></td></tr></table></figure><h4 id="问题一：子集"><a href="#问题一：子集" class="headerlink" title="问题一：子集"></a>问题一：子集</h4><p>$\mathrm{input:}$ 一个不包含重复数字的数组</p><p>$\mathrm{output:}$ 这个数组中数字所组成的子集</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>周四计划</title>
+      <link href="/2020/06/10/%E5%91%A8%E5%9B%9B%E8%AE%A1%E5%88%92/"/>
+      <url>/2020/06/10/%E5%91%A8%E5%9B%9B%E8%AE%A1%E5%88%92/</url>
+      
+        <content type="html"><![CDATA[<h3 id="早上"><a href="#早上" class="headerlink" title="早上"></a>早上</h3><p>模拟电路实验</p><h3 id="中午"><a href="#中午" class="headerlink" title="中午"></a>中午</h3><p>量子信息笔记整理</p><h3 id="下午"><a href="#下午" class="headerlink" title="下午"></a>下午</h3><p>粒子物理、量子信息笔记整理</p><h3 id="晚上"><a href="#晚上" class="headerlink" title="晚上"></a>晚上</h3><p>概率统计、LeetCode题目训练、量子信息笔记整理</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>概率统计笔记</title>
+      <link href="/2020/06/10/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1%E7%AC%94%E8%AE%B0/"/>
+      <url>/2020/06/10/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="多维随机变量及其分布"><a href="#多维随机变量及其分布" class="headerlink" title="多维随机变量及其分布"></a>多维随机变量及其分布</h1><h3 id="1-多维随机变量及其分布"><a href="#1-多维随机变量及其分布" class="headerlink" title="1.多维随机变量及其分布"></a>1.多维随机变量及其分布</h3><p>定义：如果$X_1(\omega)$，…，$X_n(\omega)$是定义在同一个样本空间$\Omega={\omega}$上的$n$个随机变量，则称$X(\omega)=(X_1(\omega),…,X_n(\omega))$为<em>$n$</em>维随机变量；</p><p>联合分布函数：$F(x_1,…,x_n)=P(X_1\le x_1,…,X_n\le x_n)$</p><p>二维联合分布的基本性质：</p><p>（1）单调性：$F(x,y)$对$x,y$均是单调非减的</p><p>（2）有界性：$0\le F(x,y) \le 1, F(-\infty, y) = F(x, -\infty) = 0, F(\infty, \infty) = 1$</p><p>（3）右连续性：对每个变量都是右连续的</p><p>（4）非负性：$P(a&lt;X\le b, c&lt;Y\le d)\ge 0$</p><p>联合分布列：$p<em>{ij}\ge 0$，$\sum_i\sum_jp</em>{ij} = 1$</p><p>联合密度函数：$p(x,y)=\frac{\part^2}{\part x\part y}F(x,y)$，$p(x,y)\ge 0$，$\int\int p(x,y)dxdy=1$</p><p>多项分布：r项分布实际上是r-1维随机变量的分布</p><script type="math/tex; mode=display">P(X_1=x_1,...,X_r=x_r)=\frac{n!}{n_1!...n_r!}p_1^{n_1}...p_r^{n_r}</script><p>多项超几何分布：</p><script type="math/tex; mode=display">P(X_1=n_1,...,X_r=n_r)=\frac{\binom{N_1}{n_1}...\binom{N_r}{n_r}}{\binom{N}{n}}</script><p>多维均匀分布</p><script type="math/tex; mode=display">p(x_1,...x_n)=\frac{1}{S_D}, (x_1,...,x_n)\in\mathcal{D}</script><p>二维正态分布</p><script type="math/tex; mode=display">p(x,y)=\frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}\exp{\{-\frac{1}{2(1-\rho^2)}[\frac{(x-\mu_1)^2}{\sigma_1^2}-2\rho\frac{(x-\mu_1)(y-\mu_2)}{\sigma_1\sigma_2}+\frac{(y-\mu_2)^2}{\sigma_2^2}]\}}</script><h3 id="2-边际分布和随机变量的独立性"><a href="#2-边际分布和随机变量的独立性" class="headerlink" title="2.边际分布和随机变量的独立性"></a>2.边际分布和随机变量的独立性</h3>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>概率统计笔记2</title>
       <link href="/2020/06/10/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1%E7%AC%94%E8%AE%B02/"/>
       <url>/2020/06/10/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1%E7%AC%94%E8%AE%B02/</url>

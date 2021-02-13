@@ -161,14 +161,7 @@
 
                         
                         <li>
-                            <a href="/photography/">Photography</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
@@ -182,7 +175,14 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/photography/">Photography</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -266,6 +266,250 @@
 
 
 <!-- Main Content -->
+
+    
+
+        <div class="post-preview">
+
+            <a href="/2020/05/24/nth-element方法/">
+                <h2 class="post-title">
+                    nth_element方法
+                </h2>
+                <h3 class="post-subtitle">
+                    
+                </h3>
+                <div class="post-content-preview">
+                    nth_element方法基本使用方法1234#include&lt;algorithm&gt;nth_element(first, nth, last, compare);//求[first, last]这样一个区间中第n大小的元素，若有特殊的比较方式，则添加compare函数体
+由于nth_element方法只排序前n个元素，故使用的时间会更少一点
+题目举例： 973.最接近原点的 K ......
+                </div>
+            </a>
+            
+                <p class="post-meta" style="margin: 10px 0;">
+                    Posted by Felix Zhang on
+                    2020-05-24
+                </p>
+                <div class="tags">
+                    
+                      <a href="/tags/#每天学点新算法" title="每天学点新算法">每天学点新算法</a>
+                    
+                </div>
+            
+
+        </div>
+        <hr>
+
+    
+
+    
+
+        <div class="post-preview">
+
+            <a href="/2020/05/23/双指针/">
+                <h2 class="post-title">
+                    双指针
+                </h2>
+                <h3 class="post-subtitle">
+                    
+                </h3>
+                <div class="post-content-preview">
+                    双指针的使用一、滑动窗口与字符串问题基本框架123456789101112131415161718192021void slidingwindow(string s, string t)&#123;  unordered_map&lt;char, int&gt; need, window;  for(char c: t) need[c]++;    int l = 0, r = 0, val......
+                </div>
+            </a>
+            
+                <p class="post-meta" style="margin: 10px 0;">
+                    Posted by Felix Zhang on
+                    2020-05-23
+                </p>
+                <div class="tags">
+                    
+                      <a href="/tags/#每天学点新算法" title="每天学点新算法">每天学点新算法</a>
+                    
+                </div>
+            
+
+        </div>
+        <hr>
+
+    
+
+    
+
+        <div class="post-preview">
+
+            <a href="/2020/05/21/字符串和string类/">
+                <h2 class="post-title">
+                    字符串和string类
+                </h2>
+                <h3 class="post-subtitle">
+                    
+                </h3>
+                <div class="post-content-preview">
+                    字符串和string类C风格字符串使用“ ”结尾的一维字符型数组，最终所需要的空间比字符串中字符个数多一个；
+12345678910111213//C++中的一些操作strcpy(s1, s2);//复制字符串s2到s1strcat(s1, s2);//连接字符串s2到s1的末尾strlen(s1);//返回字符串s1的长度strcmp(s1, s2);//比较两个字符串，若相同则返回0；如......
+                </div>
+            </a>
+            
+                <p class="post-meta" style="margin: 10px 0;">
+                    Posted by Felix Zhang on
+                    2020-05-21
+                </p>
+                <div class="tags">
+                    
+                      <a href="/tags/#C++程序设计语言学习专题" title="C++程序设计语言学习专题">C++程序设计语言学习专题</a>
+                    
+                </div>
+            
+
+        </div>
+        <hr>
+
+    
+
+    
+
+        <div class="post-preview">
+
+            <a href="/2020/05/21/最长回文字符串/">
+                <h2 class="post-title">
+                    最长回文字符串
+                </h2>
+                <h3 class="post-subtitle">
+                    
+                </h3>
+                <div class="post-content-preview">
+                    知识点（1）字符串的使用方法
+（2）动态规划
+（3）Manacher算法
+题目描述：最长回文字串给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。
+示例 1：
+123输入: &quot;babad&quot;输出: &quot;bab&quot;注意: &quot;aba&quot; 也是一个有效答案。
+示例 2：
+12输入: &quot;cbbd&qu......
+                </div>
+            </a>
+            
+                <p class="post-meta" style="margin: 10px 0;">
+                    Posted by Felix Zhang on
+                    2020-05-21
+                </p>
+                <div class="tags">
+                    
+                      <a href="/tags/#每天学点新算法" title="每天学点新算法">每天学点新算法</a>
+                    
+                </div>
+            
+
+        </div>
+        <hr>
+
+    
+
+    
+
+        <div class="post-preview">
+
+            <a href="/2020/05/20/升级版前缀和算法/">
+                <h2 class="post-title">
+                    位运算&前缀和算法
+                </h2>
+                <h3 class="post-subtitle">
+                    
+                </h3>
+                <div class="post-content-preview">
+                    前缀和算法在5月15日的文章初步接触了前缀和算法，前缀和算法的主要用途可以归纳为：利用前缀和的差值来实现统计某一个区间中字符出现次数或者连续和等问题。
+但在5月20日的每日一题中，前缀和算法、借助位运算实现的状态压缩二者结合可以产生更好的解题思路。
+题目描述1371. 每个元音包含偶数次的最长子字符串
+给你一个字符串 s ，请你返回满足以下条件的最长子字符串的长度：每个元音字母，即 ‘a’，......
+                </div>
+            </a>
+            
+                <p class="post-meta" style="margin: 10px 0;">
+                    Posted by Felix Zhang on
+                    2020-05-20
+                </p>
+                <div class="tags">
+                    
+                      <a href="/tags/#每天学点新算法" title="每天学点新算法">每天学点新算法</a>
+                    
+                </div>
+            
+
+        </div>
+        <hr>
+
+    
+
+    
+
+        <div class="post-preview">
+
+            <a href="/2020/05/19/信息的处理与表示/">
+                <h2 class="post-title">
+                    信息的处理与表示
+                </h2>
+                <h3 class="post-subtitle">
+                    
+                </h3>
+                <div class="post-content-preview">
+                    信息的处理与表示解释(interpretation): 赋予可能的位模式以含义
+由于精度有限，浮点数运算是不可结合的。
+信息存储字节（byte）：最小的可寻址的内存单位；
+程序对象（program object）：程序数据、指令和控制信息；
+十六进制表示法一个字节由8位组成，采用16进制（‘0’～‘F’）只需两位便可进行表示
+在C语言中，以0x或者0x开头的数字常量可以被理解为16进制的值
+......
+                </div>
+            </a>
+            
+                <p class="post-meta" style="margin: 10px 0;">
+                    Posted by Felix Zhang on
+                    2020-05-19
+                </p>
+                <div class="tags">
+                    
+                      <a href="/tags/#深入理解计算机系统读书笔记" title="深入理解计算机系统读书笔记">深入理解计算机系统读书笔记</a>
+                    
+                </div>
+            
+
+        </div>
+        <hr>
+
+    
+
+    
+
+        <div class="post-preview">
+
+            <a href="/2020/05/18/状态机思想/">
+                <h2 class="post-title">
+                    状态机思想
+                </h2>
+                <h3 class="post-subtitle">
+                    
+                </h3>
+                <div class="post-content-preview">
+                    状态机思想题目描述688. “马”在棋盘上的概率难度中等47收藏分享切换为英文关注反馈
+已知一个 NxN 的国际象棋棋盘，棋盘的行号和列号都是从 0 开始。即最左上角的格子记为 (0, 0)，最右下角的记为 (N-1, N-1)。 
+现有一个 “马”（也译作 “骑士”）位于 (r, c) ，并打算进行 K 次移动。 
+如下图所示，国际象棋的 “马” 每一步先沿水平或垂直方向移动 2 个格子，......
+                </div>
+            </a>
+            
+                <p class="post-meta" style="margin: 10px 0;">
+                    Posted by Felix Zhang on
+                    2020-05-18
+                </p>
+                <div class="tags">
+                    
+                </div>
+            
+
+        </div>
+        <hr>
+
+    
 
     
 
@@ -372,246 +616,6 @@ k 是一个正整数，它的值小于或等于链表的长度。
 
     
 
-    
-
-        <div class="post-preview">
-
-            <a href="/2020/05/15/排序算法/">
-                <h2 class="post-title">
-                    排序算法
-                </h2>
-                <h3 class="post-subtitle">
-                    
-                </h3>
-                <div class="post-content-preview">
-                    算法导论专题：排序方法一：插入排序方法二：归并排序1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253#include &lt;iostream&gt;#include &lt;vector&gt;using namespace std;#define......
-                </div>
-            </a>
-            
-                <p class="post-meta" style="margin: 10px 0;">
-                    Posted by Felix Zhang on
-                    2020-05-15
-                </p>
-                <div class="tags">
-                    
-                      <a href="/tags/#《算法导论》学习笔记" title="《算法导论》学习笔记">《算法导论》学习笔记</a>
-                    
-                </div>
-            
-
-        </div>
-        <hr>
-
-    
-
-    
-
-        <div class="post-preview">
-
-            <a href="/2020/05/15/前缀和算法/">
-                <h2 class="post-title">
-                    前缀和算法
-                </h2>
-                <h3 class="post-subtitle">
-                    
-                </h3>
-                <div class="post-content-preview">
-                    前缀和算法前缀和，取余，用hash表维护次数，方便统计；
-题目描述560560. 和为K的子数组
-给定一个整数数组和一个整数 k，你需要找到该数组中和为 k 的连续的子数组的个数。
-示例 1 :
-12输入:nums &#x3D; [1,1,1], k &#x3D; 2输出: 2 , [1,1] 与 [1,1] 为两种不同的情况。
-说明 :
-
-数组的长度为 [1, 20,000]。
-数组中元素......
-                </div>
-            </a>
-            
-                <p class="post-meta" style="margin: 10px 0;">
-                    Posted by Felix Zhang on
-                    2020-05-15
-                </p>
-                <div class="tags">
-                    
-                      <a href="/tags/#每天学点新算法" title="每天学点新算法">每天学点新算法</a>
-                    
-                </div>
-            
-
-        </div>
-        <hr>
-
-    
-
-    
-
-        <div class="post-preview">
-
-            <a href="/2020/05/14/计算机系统漫游/">
-                <h2 class="post-title">
-                    计算机系统漫游
-                </h2>
-                <h3 class="post-subtitle">
-                    
-                </h3>
-                <div class="post-content-preview">
-                    ...
-                </div>
-            </a>
-            
-                <p class="post-meta" style="margin: 10px 0;">
-                    Posted by Felix Zhang on
-                    2020-05-14
-                </p>
-                <div class="tags">
-                    
-                </div>
-            
-
-        </div>
-        <hr>
-
-    
-
-    
-
-        <div class="post-preview">
-
-            <a href="/2020/05/14/字符串相乘/">
-                <h2 class="post-title">
-                    字符串相乘
-                </h2>
-                <h3 class="post-subtitle">
-                    
-                </h3>
-                <div class="post-content-preview">
-                    字符串相乘（竖式模拟）给定两个以字符串形式表示的非负整数 num1 和 num2，返回 num1 和 num2 的乘积，它们的乘积也表示为字符串形式。
-示例 1:
-输入: num1 = “2”, num2 = “3”输出: “6”示例 2:
-输入: num1 = “123”, num2 = “456”输出: “56088”
-1234num1 和 num2 的长度小于110。num1 和 nu......
-                </div>
-            </a>
-            
-                <p class="post-meta" style="margin: 10px 0;">
-                    Posted by Felix Zhang on
-                    2020-05-14
-                </p>
-                <div class="tags">
-                    
-                      <a href="/tags/#每天学点新算法" title="每天学点新算法">每天学点新算法</a>
-                    
-                </div>
-            
-
-        </div>
-        <hr>
-
-    
-
-    
-
-        <div class="post-preview">
-
-            <a href="/2020/05/13/Hierholzer算法/">
-                <h2 class="post-title">
-                    Hierholzer算法
-                </h2>
-                <h3 class="post-subtitle">
-                    
-                </h3>
-                <div class="post-content-preview">
-                    Hierholzer算法的应用Hierholzer算法的基本过程1234(1) 选择任一顶点为起点，遍历所有相邻边。(2) 深度搜索，访问相邻顶点。将经过的边都删除。(3) 如果当前顶点没有相邻边，则将顶点入栈。(4) 栈中的顶点倒序输出，就是从起点出发的欧拉回路。
-性质一：如果该图为欧拉图，则栈底的必定为起点。如果该图为半欧拉图，则栈底部存储的是与起点不同的另外一个奇度数顶点。
-性质二：如......
-                </div>
-            </a>
-            
-                <p class="post-meta" style="margin: 10px 0;">
-                    Posted by Felix Zhang on
-                    2020-05-13
-                </p>
-                <div class="tags">
-                    
-                      <a href="/tags/#每天学点新算法" title="每天学点新算法">每天学点新算法</a>
-                    
-                </div>
-            
-
-        </div>
-        <hr>
-
-    
-
-    
-
-        <div class="post-preview">
-
-            <a href="/2020/05/04/力扣刷题日记/">
-                <h2 class="post-title">
-                    力扣刷题日记
-                </h2>
-                <h3 class="post-subtitle">
-                    
-                </h3>
-                <div class="post-content-preview">
-                    双指针（1）三数之和问题（15，16）、四数之和问题（18）解决思路：选定起点，使用排序+双指针的做法
-解决难点：怎么排除重复项目：直接进入下一循环，如果值与上一个相等，则直接跳过，对于四个元素都是如此
-扩展问题：四数之和（18）：在三数之和上加一个循环
-（2）删除链表倒数第N个节点（19）解决思路：使用双指针，一个置于第N(label = n - 1)个节点，另一个置于第1(label =......
-                </div>
-            </a>
-            
-                <p class="post-meta" style="margin: 10px 0;">
-                    Posted by Felix Zhang on
-                    2020-05-04
-                </p>
-                <div class="tags">
-                    
-                      <a href="/tags/#保研冲刺" title="保研冲刺">保研冲刺</a>
-                    
-                </div>
-            
-
-        </div>
-        <hr>
-
-    
-
-    
-
-        <div class="post-preview">
-
-            <a href="/2020/04/30/数据结构与算法分析学习笔记/">
-                <h2 class="post-title">
-                    数据结构与算法分析学习笔记
-                </h2>
-                <h3 class="post-subtitle">
-                    
-                </h3>
-                <div class="post-content-preview">
-                    （1）选择排序$\Theta(n^2)$（2）归并排序$\Theta(n\lg n)$（3）求解递归复杂度：特征方程、主定理第四章：分治策略求解方法：代入法、递归树法、主定理
-4.1 最大子数组问题：寻找数组A的连续和最大的子数组原始问题：最大化股票收益
-将原始问题依照中间点分为两段，最大子数组一定属于三种情况之一：完全左侧、完全右侧、跨越中心；
-1234567891011121314151......
-                </div>
-            </a>
-            
-                <p class="post-meta" style="margin: 10px 0;">
-                    Posted by Felix Zhang on
-                    2020-04-30
-                </p>
-                <div class="tags">
-                    
-                </div>
-            
-
-        </div>
-        <hr>
-
-    
-
 
 
 <!-- Pager -->
@@ -681,11 +685,11 @@ k 是一个正整数，它的值小于或等于链表的长度。
             
         
             
-            <a href="/tags/#每天学点新算法" title="每天学点新算法" rel="11">每天学点新算法</a>
+            <a href="/tags/#保研冲刺" title="保研冲刺" rel="2">保研冲刺</a>
             
         
             
-            <a href="/tags/#保研冲刺" title="保研冲刺" rel="2">保研冲刺</a>
+            <a href="/tags/#每天学点新算法" title="每天学点新算法" rel="11">每天学点新算法</a>
             
         
             
@@ -700,6 +704,10 @@ k 是一个正整数，它的值小于或等于链表的长度。
         
             
             <a href="/tags/#机器学习读书笔记" title="机器学习读书笔记" rel="2">机器学习读书笔记</a>
+            
+        
+            
+        
             
         
             
@@ -786,23 +794,23 @@ k 是一个正整数，它的值小于或等于链表的长度。
     <ul>
       
         <li>
-          <a href="/2020/06/10/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1%E7%AC%94%E8%AE%B02/">概率统计笔记2</a>
+          <a href="/2021/02/13/%E8%B4%A2%E5%8A%A1%E5%BB%BA%E6%A8%A1/">财务建模</a>
         </li>
       
         <li>
-          <a href="/2020/06/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%B4%E6%98%8E/">数据结构说明</a>
+          <a href="/2020/09/09/%E5%BA%94%E7%94%A8%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B/">应用随机过程</a>
         </li>
       
         <li>
-          <a href="/2020/06/04/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/">机器学习笔记（四）</a>
+          <a href="/2020/06/26/%E4%BF%9D%E7%A0%94%E5%90%8E%E6%9A%91%E5%81%87%E8%AE%A1%E5%88%92/">保研后暑假计划</a>
         </li>
       
         <li>
-          <a href="/2020/06/03/%E5%B9%B3%E5%9D%87%E5%9C%BA%E7%90%86%E8%AE%BA/">平均场理论</a>
+          <a href="/2020/06/21/%E5%9B%BE%E8%AE%BA/">最小生成树算法</a>
         </li>
       
         <li>
-          <a href="/2020/06/03/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/">机器学习笔记（三）</a>
+          <a href="/2020/06/13/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/">回溯算法</a>
         </li>
       
     </ul>
@@ -831,7 +839,7 @@ k 是一个正整数，它的值小于或等于链表的长度。
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li></ul>
     </div>
 
         <hr>
@@ -889,7 +897,7 @@ k 是一个正整数，它的值小于或等于链表的长度。
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; Felix Zhang 2020 
+                    Copyright &copy; Felix Zhang 2021 
                     <br>
                     Powered by 
                     <a href="https://github.com/dusign/hexo-theme-snail" target="_blank" rel="noopener">
